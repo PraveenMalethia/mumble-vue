@@ -34,7 +34,34 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/auth-next',
   ],
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: 'https://mumbleapi.herokuapp.com/api/auth/login/',
+            method: 'POST',
+            propertyName: 'access'
+          },
+          logout: {
+            url: 'https://mumbleapi.herokuapp.com/api/auth/logout/',
+            method: 'get'
+          },
+          user: {
+            url: 'https://mumbleapi.herokuapp.com/api/auth/profile/',
+            method: 'get',
+            propertyName: false
+          }
+        },
+        tokenRequired: true,
+        tokenType: "Bearer",
+        globalToken: true,
+        autoFetchUser: true
+      }
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
