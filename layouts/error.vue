@@ -15,7 +15,8 @@
           <p class="">Page not found</p>
         </div>
         <div class="mb-20 md:mb-0">
-          <button @click="$router.push('/')"
+          <button
+            @click="$router.push('/')"
             class="text-lg font-light outline-none focus:outline-none transform transition-all hover:scale-110 text-blue-500 hover:text-blue-600"
           >
             Back to Home
