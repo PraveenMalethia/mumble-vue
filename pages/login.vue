@@ -58,15 +58,15 @@
       </div>
       <div class="w-full py-6 z-20">
         <div class="w-full">
-          <h1 class="text-5xl font-bold tracking-wide justify-center">
+          <h1 class="xs:text-3xl md:text-4xl lg:text-5xl font-bold justify-center">
             A PLACE FOR DEVELOPERS TO
           </h1>
           <p class="text-2xl my-4">
             Share Projects, Ask Questions, Have Discussions & Publish Articles.
           </p>
         </div>
-        <div class="py-6 space-x-2 justify-center">
-          <img src="/icon.png" width="100" height="100"><span class="text-8xl">MUMBLE</span>
+        <div class="py-6 space-x-2 justify-center flex">
+          <img src="/icon.png" width="100" height="100"><p class="text-5xl md:pt-5 font-bold text-indigo-400">MUMBLE</p>
         </div>
         <div class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
           <div class="pb-2 pt-4">
@@ -92,14 +92,14 @@
           </div>
           <div class="px-4 pb-2 pt-4">
             <button
-              class="transition duration-500 ease-in-out uppercase block w-full p-4 text-lg rounded-full text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none"
+              class="transition duration-500 ease-in-out uppercase block w-full p-4 text-lg border-2 border-purple-600 rounded-lg px-3 py-2 text-purple-400 cursor-pointer hover:bg-purple-600 hover:text-purple-200"
             >
               sign in
             </button>
           </div>
           <div class="px-4 pb-2 pt-4">
             <button
-              class="transition duration-500 ease-in-out uppercase block w-full p-4 text-lg rounded-full bg-indigo-100 hover:bg-indigo-300 focus:outline-none"
+              class="transition duration-500 ease-in-out uppercase block w-full p-4 text-lg border-2 border-purple-600 rounded-lg px-3 py-2 text-purple-400 cursor-pointer hover:bg-purple-600 hover:text-purple-200"
             >
               New Here ? Sign Up
             </button>
