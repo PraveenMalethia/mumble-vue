@@ -1,20 +1,65 @@
 <template>
-  <div class="max-w-7xl dark:bg-gray-800 mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-      <span class="block">Ready to Contribute ?</span>
-      <span class="block text-indigo-600">Contribute to Mumble Today !</span>
-    </h2>
-    <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-      <div class="inline-flex rounded-md shadow">
-        <a href="https://github.com/PraveenMalethia/mumble-vue" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
-          Get started
-        </a>
+  <div class="flex h-screen bg-green-300">
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <header class="flex justify-between items-center bg-blue-300 p-4">
+        <div class="flex">Left</div>
+        <div class="flex">Right</div>
+      </header>
+      <div class="flex h-full">
+        <nav class="flex w-72 h-full bg-pink-500">
+          <div class="w-full flex mx-auto px-6 py-8">
+            <div
+              class="w-full h-full flex items-center justify-center text-gray-900 text-xl border-4 border-gray-900 border-dashed"
+            >
+              Sidebar
+            </div>
+          </div>
+        </nav>
+        <main
+          class="flex flex-col w-full bg-white overflow-x-hidden overflow-y-auto mb-14"
+        >
+          <div class="flex w-full mx-auto px-6 py-8">
+            <div
+              class="flex flex-col w-full h-full text-gray-900 text-xl border-4 border-gray-900 border-dashed"
+            >
+              <div
+                class="flex w-full max-w-xl h-60 items-center justify-center mx-auto bg-green-400 border-b border-gray-600"
+              >
+                Post
+              </div>
+              <div
+                class="flex w-full max-w-xl h-60 items-center justify-center mx-auto bg-green-400 border-b border-gray-600"
+              >
+                Post
+              </div>
+              <div
+                class="flex w-full max-w-xl h-60 items-center justify-center mx-auto bg-green-400 border-b border-gray-600"
+              >
+                Post
+              </div>
+              <div
+                class="flex w-full max-w-xl h-60 items-center justify-center mx-auto bg-green-400 border-b border-gray-600"
+              >
+                Post
+              </div>
+              <div
+                class="flex w-full max-w-xl h-60 items-center justify-center mx-auto bg-green-400 border-b border-gray-600"
+              >
+                Post
+              </div>
+            </div>
+          </div>
+        </main>
+        <nav class="flex w-72 h-full bg-yellow-400">
+          <div class="w-full flex mx-auto px-6 py-8">
+            <div
+              class="w-full h-full flex items-center justify-center text-gray-900 text-xl border-4 border-gray-900 border-dashed"
+            >
+              Rightbar
+            </div>
+          </div>
+        </nav>
       </div>
-      <!-- <div class="ml-3 inline-flex rounded-md shadow">
-        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
-          Learn more
-        </a>
-      </div> -->
     </div>
   </div>
 </template>
@@ -24,4 +69,20 @@ export default {}
 </script>
 
 <style>
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(13deg, #7bcfeb 14%, #e685d3 64%);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: inset 7px 10px 12px #f0f0f0;
+}
 </style>
