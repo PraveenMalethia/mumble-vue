@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- Nav Starts -->
+    <navbar />
     <!-- Nav Ends -->
     <!-- Main App starts -->
     <Nuxt />
