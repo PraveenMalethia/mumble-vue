@@ -1,4 +1,4 @@
-template>
+<template>
     <div class="px-4 ml-24 mt-0 fixed hidden md:block">
         <div v-for="tab in tabs" :key="tab.id">
             <p class="cursor-pointer transition ease-in duration-300
