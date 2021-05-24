@@ -11,12 +11,12 @@
 
             <div>
                 <div class="flex items-center">
-                    <p class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6" @click="show_items = !show_items"><fa icon="bell"/></p>
+                    <button class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6" @click="show_items = !show_items"><fa class="cursor-finger" icon="bell"/></button>
 
                     <img src="https://mumbleapi.herokuapp.com/static/images/default.png" class="h-10 mr-4 md:mr-12 lg:mr-16">
                 </div>
                     
-                <!-- <p class="text-white ml-5 uppercase md:text-lg md:tracking-medium ml-4 md:mr-6" @click="show_items = !show_items">Bell</p>
+                <!-- <p class="text-white uppercase md:text-lg md:tracking-medium ml-4 md:mr-6" @click="show_items = !show_items">Bell</p>
 
                 <img src="https://mumbleapi.herokuapp.com/static/images/default.png" class="h-10 mr-4 md:mr-12 lg:mr-16"> -->
 
