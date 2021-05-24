@@ -6,7 +6,8 @@
             </textarea>
 
             <button class="px-6 py-2 bg-blue-500 mt-4 rounded-md  text-white font-semibold tracking-wide
-            focus:outline-none hover:bg-blue-400 transition ease-in-out duration-300">Mumble Now</button>
+            focus:outline-none hover:bg-blue-400 transition ease-in-out duration-300"><fa icon="envelope"/>
+            Mumble Now</button>
         </div>
 
         <post />
