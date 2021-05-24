@@ -7,7 +7,7 @@
     <Nuxt />
     <!-- Main App ends -->
     <!-- Footer starts -->
-    <div class="bg-gray-100 pt-2">
+    <div class="bg-gray-100 pt-2 mt-20">
       <div
         class="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col md:flex-row max-w-6xl"
       >
