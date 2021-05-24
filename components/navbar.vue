@@ -6,12 +6,12 @@
         </div>
 
         <div class="flex items-center">
-            <input class="border shadow-lg border-transparent rounded-full py-2 px-4 bg-gray-400 focus:outline-none 
+            <input class="transition duration-200 ease-in-out border shadow-lg border-transparent rounded-full py-2 px-4 bg-gray-400 focus:outline-none 
             focus:ring-2 focus:ring-blue-400 focus:border-transparent h-8 md:h-11 w-36 md:w-56 placeholder-gray-600" placeholder="Search">
 
             <div>
                 <div class="flex items-center">
-                    <p class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6" @click="show_items = !show_items">Bell</p>
+                    <p class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6" @click="show_items = !show_items"><fa icon="bell"/></p>
 
                     <img src="https://mumbleapi.herokuapp.com/static/images/default.png" class="h-10 mr-4 md:mr-12 lg:mr-16">
                 </div>

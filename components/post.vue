@@ -16,9 +16,9 @@
 
             <div class="flex items-center px-4 py-2">
                 <div>
-                    <p>+</p>
-                    <p>36</p>
-                    <p>--</p>
+                    <button @click="UpVote()" class="px-1"><fa icon="chevron-up"/></button>
+                    <p class="pl-0.5">36</p>
+                    <button @click="DownVote()" class="px-1"><fa icon="chevron-down"/></button>
                 </div>
 
                 <div class="mt-6 ml-6">
@@ -32,6 +32,13 @@
 
 <script>
 export default {
-    
+    methods:{
+        UpVote(){
+            console.log("Up Voted")
+        },
+        DownVote(){
+            console.log("Down Voted")
+        }
+    }
 }
 </script>
