@@ -2,7 +2,7 @@
 <div class="bg-indigo-50 w-screen fixed">
     <div class="flex bg-gray-600 py-2 px-3 md:justify-between md:py-3 md:px-7 items-center">
         <div>
-            <h2 class="text-md md:text-xl text-gray-400 md:tracking-wide uppercase font-bold px-24">Mumble</h2>
+            <h2 class="text-md md:text-xl text-gray-400 md:tracking-wide uppercase font-bold px-8 md:px-24">Mumble</h2>
         </div>
 
         <div class="flex items-center">
