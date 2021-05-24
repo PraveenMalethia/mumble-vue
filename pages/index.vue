@@ -8,7 +8,7 @@
         <feed />
       </div>
       <div class="md:col-span-1 hidden md:block mt-10 md:mt-20 md:ml-15">
-        <mystuff/>
+        <myintrests/>
       </div>
     </div>
   </div>
