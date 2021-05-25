@@ -16,9 +16,9 @@
 
             <div class="flex items-center px-4 py-2">
                 <div>
-                    <button @click="UpVote()" class="px-1 focus:outline-none"><fa icon="chevron-up"/></button>
+                    <button @click="UpVote()" class="px-1 focus:outline-none text-blue-600"><fa icon="chevron-up"/></button>
                     <p class="pl-0.5">36</p>
-                    <button @click="DownVote()" class="px-1 focus:outline-none"><fa icon="chevron-down"/></button>
+                    <button @click="DownVote()" class="px-1 focus:outline-none text-red-500"><fa icon="chevron-down"/></button>
                 </div>
 
                 <div class="mt-6 ml-6">
