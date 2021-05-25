@@ -26,7 +26,7 @@ To report a security vulnerability, please :
     
 <br />
 
-*You will receive a response from us *(Moderators and Git Repo Managers)* within 24 hours*
+*You will receive a response from us *(Moderators and Repo Managers)* within 24 hours*
 
 #
 
