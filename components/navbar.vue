@@ -11,7 +11,7 @@
 
             <div>
                 <div class="flex items-center">
-                    <button class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6" @click="show_items = !show_items"><fa class="cursor-finger" icon="bell"/></button>
+                    <button class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6 focus:outline-none" @click="show_items = !show_items"><fa class="cursor-finger" icon="bell"/></button>
 
                     <img src="https://mumbleapi.herokuapp.com/static/images/default.png" class="h-10 mr-4 md:mr-12 lg:mr-16">
                 </div>

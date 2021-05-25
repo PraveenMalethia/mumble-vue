@@ -81,7 +81,6 @@ export default {
     component:'fa',
     icons:{
       solid:true,
-      brand: true,
     },
   }
 }
