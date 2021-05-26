@@ -26,7 +26,7 @@
               <fa class="cursor-finger" icon="bell" />
             </button>
             <div class="dark:bg-gray-800 dark:text-gray-200">
-              <p class=" focus:outline-none ">
+              <p class="focus:outline-none">
                 <select
                   v-model="$colorMode.preference"
                   class="border-2 border-white rounded w-24 h-8 dark:bg-gray-900 dark:text-white dark:border-gray-200"

@@ -9,15 +9,10 @@
       >
       </textarea>
 
-
-      <button
-        class="btn-primary"
-      >
-        <fa icon="code" /> Mumble Now
-      </button>
+      <button class="btn-primary"><fa icon="code" /> Mumble Now</button>
     </div>
     <div v-for="post in posts" :key="post.id">
-    <post :mumble="post"/>
+      <post :mumble="post" />
     </div>
   </div>
 </template>
@@ -25,17 +20,17 @@
 <script>
 export default {
   data() {
-      return {
-        posts: []
-      }
-    },
-    async fetch() {
-      this.posts = await this.$axios.get(
-        'https://mumbleapi.herokuapp.com/api/mumbles/'
-      ).then(res => res.data.results)
-      console.log(this.posts)
+    return {
+      posts: [],
     }
-  }
+  },
+  async fetch() {
+    this.posts = await this.$axios
+      .get('https://mumbleapi.herokuapp.com/api/mumbles/')
+      .then((res) => res.data.results)
+    console.log(this.posts)
+  },
+}
 </script>
 
 <style>

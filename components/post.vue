@@ -13,12 +13,10 @@
           <p class="font-light dark:text-gray-200">@{{mumble.user.username}}</p>
         </div>
       </div>
-
       <div>
         <p class="text-gray-600 lg:text-lg dark:text-gray-200">10 days ago</p>
       </div>
     </div>
-
     <div class="flex items-center px-4 py-2">
       <div>
         <button
@@ -27,7 +25,7 @@
         >
           <fa icon="chevron-up" />
         </button>
-        <p class="pl-1.5 dark:text-gray-200">{{mumble.vote_rank}}</p>
+        <p class="pl-1.5 dark:text-gray-200">{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
         <button
           @click="DownVote()"
           class="px-1 focus:outline-none text-red-400"
@@ -35,19 +33,17 @@
           <fa icon="chevron-down" />
         </button>
       </div>
-
-      <div class="mt-6 ml-6">
-        <p class="text-gray-600 dark:text-gray-200">
-          <div v-if="mumble.original_mumble == null">
+      <div class="ml-6">
+        <p>
+          <div class="text-gray-600 dark:text-gray-200" v-if="mumble.original_mumble == null">
             {{mumble.content}}
           </div>
-          <div v-else>
+          <div class="text-gray-600 dark:text-gray-200" v-else>
             {{mumble.original_mumble.content}}
           </div>
         </p>
       </div>
     </div>
-
     <hr class="mt-4 mb-4 bg-gray-300" />
   </div>
 </template>
@@ -56,8 +52,8 @@
 export default {
   props: {
     mumble: {
-      type:Object,
-      required:true
+      type: Object,
+      required: true,
     },
   },
   methods: {
