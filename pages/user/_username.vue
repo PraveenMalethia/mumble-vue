@@ -45,7 +45,7 @@
                     </div>
                 </div>
 
-                <topics title="Skills" class="pr-5 w-11/12" />                
+                <topics class="pr-5 w-11/12" />                
             </div>
 
         </div>
