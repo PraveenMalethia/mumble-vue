@@ -27,6 +27,7 @@ export default {
   buildModules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/color-mode',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -43,6 +44,7 @@ export default {
     },
     strategies: {
       local: {
+        scheme: 'refresh',
         endpoints: {
           login: {
             url: 'https://mumbleapi.herokuapp.com/api/users/login/',
@@ -60,6 +62,11 @@ export default {
         token: {
           property: 'access',
           // prefix: 'mumble.',
+        },
+        refreshToken: {
+          property: 'refresh',
+          data: 'refresh',
+          maxAge: 60 * 60 * 24 * 5
         },
         user: {
           autoFetch: true,
@@ -94,10 +101,24 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  fontawesome:{
-    component:'fa',
-    icons:{
-      solid:true,
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: true,
     },
+  },
+  tailwindcss: {
+    jit: true,
+    // add '~tailwind.config` alias
+    exposeConfig: true
+  },
+  colorMode: {
+    preference: 'light', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+    globalName: '__MUMBLE_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'mumble-color-mode'
   }
 }
