@@ -22,10 +22,12 @@ export default {
     return {
       tabs: [
         { title: 'Home', id: 1, icon: 'home' },
-        { title: 'Contributers', id: 2, icon: 'users' },
-        { title: 'Inbox', id: 3, icon: 'inbox' },
-        { title: 'Topics', id: 4, icon: 'tags' },
-        { title: 'Settings', id: 5, icon: 'cog' },
+        { title: 'Inbox', id: 2, icon: 'inbox' },
+        { title: 'Contributers', id: 3, icon: 'users' },
+        { title: 'Articles', id: 4, icon: 'file' },
+        { title: 'Discussions', id: 5, icon: 'users' },
+        { title: 'Topics', id: 6, icon: 'tags' },
+        { title: 'Settings', id: 7, icon: 'cog' },
       ],
     }
   },
