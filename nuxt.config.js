@@ -107,6 +107,12 @@ export default {
     exposeConfig: true
   },
   colorMode: {
-    classSuffix: ""
+    preference: 'light', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'nuxt-color-mode'
   }
 }

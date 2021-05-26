@@ -25,7 +25,18 @@
             >
               <fa class="cursor-finger" icon="bell" />
             </button>
-            
+            <div class="dark:bg-gray-800 dark:text-gray-200">
+              <p class=" focus:outline-none ">
+                <select
+                  v-model="$colorMode.preference"
+                  class="border-2 border-white rounded w-24 h-8 dark:bg-gray-900 dark:text-white dark:border-gray-200"
+                >
+                  <option value="system">System</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </p>
+            </div>
             <img
               src="https://mumbleapi.herokuapp.com/static/images/default.png"
               class="h-10 mr-4 md:mr-12 lg:mr-16"

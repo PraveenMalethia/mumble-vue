@@ -197,16 +197,8 @@
 
 <script>
 export default {
-  colorMode: 'dark',
   methods:{
-    ChangeMode(){
-      if (this.colorMode == 'dark'){
-        this.colorMode = 'light'
-      }
-      else{
-        this.colorMode = 'dark'
-      }
-    }
+    
   }
 }
 </script>
