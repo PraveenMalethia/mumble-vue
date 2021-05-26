@@ -74,6 +74,7 @@
               type="text"
               name="username"
               id="username"
+              v-model="credentials.username"
               placeholder="Username"
               class="block w-full p-4 text-lg rounded-sm dark:bg-black border focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             />
@@ -82,6 +83,7 @@
             <input
               class="block w-full p-4 text-lg rounded-sm dark:bg-black border focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
               type="password"
+              v-model="credentials.password"
               name="password"
               id="password"
               placeholder="Password"
@@ -92,6 +94,7 @@
           </div>
           <div class="px-4 pb-2 pt-4">
             <button
+              @click="login()"
               class="transition duration-500 ease-in-out uppercase block w-full p-4 text-lg border-2 border-purple-600 rounded-lg px-3 py-2 text-purple-400 cursor-pointer hover:bg-purple-600 hover:text-purple-200"
             >
               sign in
@@ -155,8 +158,24 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      credentials: {
+        username: '',
+        password: '',
+      },
+    }
+  },
+  auth: 'guest',
+  methods: {
+    async login() {
+      await this.$auth.loginWith('local', {
+        data: this.credentials,
+      })
+    },
+  },
+}
 </script>
-
 <style>
 </style>
