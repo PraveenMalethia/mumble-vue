@@ -5,7 +5,7 @@
                 <sidenavbar current="home" />
             </div>
 
-            <div class="col-span-2 block mt-10 md:mt-20">
+            <div class="col-span-2 hidden md:block mt-10 md:mt-20">
                 <post />
                 <post />
                 <post />
@@ -13,8 +13,8 @@
 
             </div>
 
-            <div class="md:col-span-1 hidden md:block mt-10 md:mt-20 -ml-4">
-                <div class="bg-white w-full md:w-11/12 rounded-md border-2 border-gray-200 mt-4 py-6 px-4">
+            <div class="md:col-span-1 ml-4 block mt-10 md:mt-20 md:-ml-4">
+                <div class="bg-white  w-full rounded-md border-2 border-gray-200 mt-4 px-6 pt-4 py-4 w-full">
                     <div class="px-4 py-2">
                         <img src="https://mumbleapi.herokuapp.com/static/images/pravenn.jpg" class="h-44 m-auto rounded-full">
                         
@@ -35,15 +35,17 @@
                                 <p class="mt-2 text-gray-500">Followers</p>
                             </div>
                         </div>
-                        
-                        <button class="bg-white border-2 mt-6 ml-16 border-blue-600 m-auto py-1 px-5 rounded abolute
-                        right-5 mr-8 text-blue-600 hover:bg-blue-600 hover:text-white transition #
-                        ease-in duration-600 text-md font-semibold">Follow</button>
+                        <center>
+                              <button class="bg-white border-2 mt-6 border-blue-600 py-1 px-5 rounded
+                             mr-8 text-blue-600 hover:bg-blue-600 hover:text-white transition ml-4
+                            ease-in duration-600 text-lg font-semibold">Follow</button>
+                        </center>
+                
                         
                     </div>
                 </div>
 
-                <topics />                
+                <topics title="Skills" class="pr-5 w-11/12" />                
             </div>
 
         </div>
