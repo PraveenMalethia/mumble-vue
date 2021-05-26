@@ -38,34 +38,51 @@ export default {
     '@nuxtjs/auth-next',
   ],
   auth: {
+    vuex: {
+      namespace: 'auth',
+    },
     strategies: {
       local: {
         endpoints: {
           login: {
-            url: 'https://mumbleapi.herokuapp.com/api/auth/login/',
+            url: 'https://mumbleapi.herokuapp.com/api/users/login/',
             method: 'POST',
-            propertyName: 'access'
           },
           logout: {
-            url: 'https://mumbleapi.herokuapp.com/api/auth/logout/',
-            method: 'get'
+            url: 'https://mumbleapi.herokuapp.com/api/users/logout/',
+            method: 'GET',
           },
           user: {
-            url: 'https://mumbleapi.herokuapp.com/api/auth/profile/',
-            method: 'get',
-            propertyName: false
-          }
+            url: 'https://mumbleapi.herokuapp.com/api/users/profile/',
+            method: 'GET',
+          },
         },
-        tokenRequired: true,
-        tokenType: "Bearer",
-        globalToken: true,
-        autoFetchUser: true
-      }
-    }
+        token: {
+          property: 'access',
+          // prefix: 'mumble.',
+        },
+        user: {
+          autoFetch: true,
+          property: false,
+        },
+      },
+    },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/',
+    },
+  },
+
+  router: {
+    middleware: ['auth'],
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://mumbleapi.herokuapp.com',
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
