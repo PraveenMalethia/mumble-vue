@@ -1,6 +1,6 @@
 <template>
-<div class="bg-indigo-50 w-screen fixed">
-    <div class="flex bg-gray-600 py-2 px-3 md:justify-between md:py-3 md:px-7 items-center">
+<div class="bg-indigo-50  w-screen fixed">
+    <div class="flex bg-gray-600 dark:bg-gray-900 py-2 px-3 md:justify-between md:py-3 md:px-7 items-center">
         <div>
             <h2 class="text-md md:text-xl text-gray-400 md:tracking-wide uppercase font-bold px-8 md:px-24">Mumble</h2>
         </div>
@@ -11,7 +11,7 @@
 
             <div>
                 <div class="flex items-center">
-                    <button class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6 focus:outline-none" @click="show_items = !show_items"><fa class="cursor-finger" icon="bell"/></button>
+                    <button class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6 focus:outline-none" @click="ShowNotifications()"><fa class="cursor-finger" icon="bell"/></button>
 
                     <img src="https://mumbleapi.herokuapp.com/static/images/default.png" class="h-10 mr-4 md:mr-12 lg:mr-16">
                 </div>
@@ -50,6 +50,11 @@ export default {
     data(){
         return{
             show_items:false
+        }
+    },
+    methods:{
+        ShowNotifications(){
+            this.show_items = !this.show_items
         }
     }
 }

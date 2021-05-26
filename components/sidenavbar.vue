@@ -7,7 +7,7 @@
         <span v-if="current == tab.id" class="text-blue-600">{{
           tab.title
         }}</span>
-        <span v-else class="text-gray-700"
+        <span v-else class="text-gray-700 dark:text-gray-300"
           ><fa class="mr-2" :icon="tab.icon" />{{ tab.title }}</span
         >
       </button>

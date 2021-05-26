@@ -27,6 +27,7 @@ export default {
   buildModules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/color-mode',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -99,5 +100,13 @@ export default {
     icons:{
       solid:true,
     },
+  },
+  tailwindcss: {
+    jit: true,
+    // add '~tailwind.config` alias
+    exposeConfig: true
+  },
+  colorMode: {
+    classSuffix: ""
   }
 }
