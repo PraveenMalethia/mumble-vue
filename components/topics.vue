@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-white rounded-md border-2 border-gray-200 w-full mt-6 mb-10">
+    <div class="bg-white rounded-md border-2 border-gray-200 w-full mt-6 mb-10 dark:bg-gray-800">
         <div class="px-6 pt-4 py-4 w-full">
-            <p class="text-gray-500 font-semibold text-2xl mb-2">Topic You Follow</p>
+            <p class="text-gray-500 font-semibold text-2xl mb-2 dark:text-gray-300">Topic You Follow</p>
             <router-link to="/topics" class="py-4 text-blue-500 font-semibold">View More</router-link>
         </div>
 
