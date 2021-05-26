@@ -5,7 +5,7 @@
     >
       <textarea
         placeholder="Share your brilliant thought"
-        class="p-4 mt-4 bg-gray-100 dark:bg-gray-800 h-24 rounded-lg width-me border-2 border-gray-200 border-gray-600 focus:border-2 focus:outline-none focus:border-blue-300"
+        class="p-4 mt-4 bg-gray-100 dark:bg-gray-800 h-24 rounded-lg width-me border-2 border-gray-200 border-gray-300 focus:border-2 focus:outline-none focus:border-blue-300"
       >
       </textarea>
 
@@ -16,13 +16,26 @@
         <fa icon="code" /> Mumble Now
       </button>
     </div>
-
-    <post />
+    <div v-for="post in posts" :key="post.id">
+    <post :mumble="post"/>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+      return {
+        posts: []
+      }
+    },
+    async fetch() {
+      this.posts = await this.$axios.get(
+        'https://mumbleapi.herokuapp.com/api/mumbles/'
+      ).then(res => res.data.results)
+      console.log(this.posts)
+    }
+  }
 </script>
 
 <style>
