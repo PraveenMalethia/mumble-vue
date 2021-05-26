@@ -4,5 +4,5 @@
 
 
 .btn-primary {
-  @apply px-6 py-2 mt-4 uppercase focus:outline-none border-2  border-blue-500 rounded-lg hover:text-white text-blue-500 hover:bg-blue-500 transition duration-500 ease-in-out;
+  @apply px-6 py-2 mt-4 uppercase focus:outline-none border-2  border-purple-600 rounded-lg hover:text-white text-purple-500 hover:bg-purple-500 transition duration-500 ease-in-out;
 }

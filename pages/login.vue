@@ -95,14 +95,13 @@
           <div class="px-4 pb-2 pt-4">
             <button
               @click="login()"
-              class="transition duration-500 ease-in-out uppercase block w-full p-4 text-lg border-2 border-purple-600 rounded-lg px-3 py-2 text-purple-400 cursor-pointer hover:bg-purple-600 hover:text-purple-200"
-            >
+              class="btn-primary block w-full">
               sign in
             </button>
           </div>
           <div class="px-4 pb-2 pt-4">
             <button
-              class="transition duration-500 ease-in-out uppercase block w-full p-4 text-lg border-2 border-purple-600 rounded-lg px-3 py-2 text-purple-400 cursor-pointer hover:bg-purple-600 hover:text-purple-200"
+              class="btn-primary block w-full"
             >
               New Here ? Sign Up
             </button>
