@@ -5,7 +5,7 @@
     <div class="flex justify-between items-center">
       <div class="flex">
         <img
-          :src="'https://mumbleapi.herokuapp.com/'+mumble.user.profile_pic"
+          :src="mumble.user.profile_pic"
           class="h-10 md:h-12 lg:h-14 rounded-full"
         />
         <div class="ml-4">
