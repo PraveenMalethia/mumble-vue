@@ -4,7 +4,7 @@
     <navbar />
     <!-- Nav Ends -->
     <!-- Main App starts -->
-    <Nuxt />
+    <Nuxt keep-alive />
     <!-- Main App ends -->
     <!-- Footer starts -->
     <div class="bg-gray-100 pt-2 mt-20">

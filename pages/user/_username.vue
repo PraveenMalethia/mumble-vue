@@ -59,14 +59,14 @@
         >
           <div class="px-4 py-2">
             <img
-              src="https://mumbleapi.herokuapp.com/static/images/pravenn.jpg"
+              :src="'https://mumbleapi.herokuapp.com/'+$auth.user.profile.profile_pic"
               class="h-44 m-auto rounded-full"
             />
             <center>
               <p
                 class="text-2xl m-auto mt-6 justify-self-center text-gray-500 font-semibold"
               >
-                {{ $route.params.username }}
+              {{$auth.user.profile.profile_pic}}
               </p>
             </center>
             <p class="text-lg font-light mt-4">
@@ -109,6 +109,16 @@ export default {
       .get('https://mumbleapi.herokuapp.com/api/mumbles/')
       .then((res) => res.data.results)
   },
+  mounted () {
+    console.log(this.$route.params.username)
+    console.log(this.$auth.user.username)
+    if (username != this.$auth.user.username){
+      console.log("Not corrent user")
+    }
+    else{
+      print("Current user")
+    }
+  }
 }
 </script>
 

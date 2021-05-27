@@ -84,6 +84,7 @@ export default {
 
   router: {
     middleware: ['auth'],
+    linkActiveClass: 'bg-green-400'
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

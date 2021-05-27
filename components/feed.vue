@@ -28,7 +28,6 @@ export default {
     this.posts = await this.$axios
       .get('https://mumbleapi.herokuapp.com/api/mumbles/')
       .then((res) => res.data.results)
-    console.log(this.posts)
   },
 }
 </script>
