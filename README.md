@@ -20,9 +20,11 @@
 
 ## About
 
-[Mumble](https://mumble.dev) is an open source project built with REACT by for developers.
+[Mumble](https://mumble.dev) is an open source project built with REACT for developers.
 <br/>
-This Repo is the Vue Version of Mumble 
+This is the Vue Version of Mumble
+
+(A Mumble Clone built with vue.js)
 
 ## Build Setup
 
