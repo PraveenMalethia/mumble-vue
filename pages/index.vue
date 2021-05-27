@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 h-screen">
+  <div class="bg-gray-100 min-h-screen">
     <div class="bg-gray-100 grid md:grid-cols-3 lg:grid-cols-4 m-auto dark:bg-gray-800 py-4 px-4 sm:px-6 lg:py-4">
       <div class="lg:col-span-1 hidden lg:block mt-10 md:mt-20">
         <sidenavbar current="home" />
