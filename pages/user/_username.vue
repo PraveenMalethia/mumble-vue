@@ -1,11 +1,7 @@
 <template>
-  <div class="bg-gray-100 min-h-screen min-w-screen">
     <div
-      class="bg-gray-100 flex flex-wrap-reverse flex-col grid md:grid-cols-3 lg:grid-cols-4 m-auto dark:bg-gray-800 py-4 px-4 sm:px-6 lg:py-4"
+      class="bg-gray-100 flex flex-wrap-reverse flex-col grid md:grid-cols-3 m-auto dark:bg-gray-800"
     >
-      <div class="lg:col-span-1 hidden lg:block mt-10 md:mt-20">
-        <sidenavbar current="home" />
-      </div>
       <div class="block w-full md:hidden mb-4 mt-10">
         <div
           class="bg-white w-full rounded-md border-2 border-gray-200 mt-4 px-6 pt-4 py-4 w-full"
@@ -94,7 +90,6 @@
         <topics title="Skills" class="pr-5 w-11/12" />
       </div>
     </div>
-  </div>
 </template>
 
 <script>
