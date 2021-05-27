@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen">
-    <h1>Welcome to Contributers page</h1>
+    <h1>Welcome to Contributors page</h1>
   </div>
 </template>
 

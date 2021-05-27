@@ -24,7 +24,7 @@ export default {
       tabs: [
         { title: 'Home', id: 1, icon: 'home', to: '/' },
         { title: 'Inbox', id: 2, icon: 'inbox', to: '/inbox' },
-        { title: 'Contributers', id: 3, icon: 'users', to: '/contributors' },
+        { title: 'Contributors', id: 3, icon: 'users', to: '/contributors' },
         { title: 'Articles', id: 4, icon: 'file', to: '/articles' },
         { title: 'Discussions', id: 5, icon: 'users', to: '/discussion' },
         { title: 'Topics', id: 6, icon: 'tags', to: '/topics' },

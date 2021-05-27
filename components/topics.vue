@@ -4,7 +4,7 @@
   >
     <div class="px-6 pt-4 py-4 w-full">
       <p class="text-gray-500 font-semibold text-2xl mb-2 dark:text-gray-300">
-        Topic You Follow
+        Topics You Follow
       </p>
       <router-link to="/topics" class="py-4 text-blue-500 font-semibold"
         >View More</router-link
