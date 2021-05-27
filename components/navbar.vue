@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-indigo-50 w-screen fixed">
+  <div class="bg-indigo-50 w-screen fixed z-40">
     <div
       class="flex bg-gray-600 dark:bg-gray-900 py-2 px-3 md:justify-between md:py-3 md:px-7 items-center"
     >
