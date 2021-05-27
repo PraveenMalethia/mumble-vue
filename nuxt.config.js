@@ -5,20 +5,20 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Mumble | Tech space for real developers' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Mumble | Tech space for real developers',
+      },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -66,7 +66,7 @@ export default {
         refreshToken: {
           property: 'refresh',
           data: 'refresh',
-          maxAge: 60 * 60 * 24 * 5
+          maxAge: 60 * 60 * 24 * 5,
         },
         user: {
           autoFetch: true,
@@ -84,7 +84,8 @@ export default {
 
   router: {
     middleware: ['auth'],
-    linkActiveClass: 'bg-gray-100 text-gray-300 rounded-md dark:bg-gray-800 px-4 py-2 bg-gradient-to-r from-gray-400 dark:from-gray-500'
+    linkActiveClass:
+      'bg-gray-100 text-gray-300 rounded-md dark:bg-gray-800 px-4 py-2 bg-gradient-to-r from-gray-400 dark:from-gray-500',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -95,13 +96,12 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
-    }
+      lang: 'en',
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
   fontawesome: {
     component: 'fa',
     icons: {
@@ -111,7 +111,7 @@ export default {
   tailwindcss: {
     jit: true,
     // add '~tailwind.config` alias
-    exposeConfig: true
+    exposeConfig: true,
   },
   colorMode: {
     preference: 'light', // default value of $colorMode.preference
@@ -120,6 +120,6 @@ export default {
     componentName: 'ColorScheme',
     classPrefix: '',
     classSuffix: '',
-    storageKey: 'mumble-color-mode'
-  }
+    storageKey: 'mumble-color-mode',
+  },
 }

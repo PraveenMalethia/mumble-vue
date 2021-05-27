@@ -6,7 +6,7 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],
-  darkMode: "class",
+  darkMode: 'class',
   theme: {
     extend: {},
     container: {
@@ -16,14 +16,15 @@ module.exports = {
   },
   variants: {
     backgroundColor: [
-      "dark",
-      "dark-hover",
-      "dark-group-hover",
-      "dark-even",
-      "dark-odd"
+      'dark',
+      'dark-hover',
+      'dark-group-hover',
+      'dark-even',
+      'dark-odd',
+      'hover',
     ],
-    borderColor: ["dark", "dark-focus", "dark-focus-within"],
-    textColor: ["dark", "dark-hover", "dark-active"]
+    borderColor: ['dark', 'dark-focus', 'dark-focus-within'],
+    textColor: ['hover', 'dark', 'dark-hover', 'dark-active'],
   },
-  plugins: [],
+  plugins: [require('tailwindcss-dark-mode')()],
 }
