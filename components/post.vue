@@ -5,12 +5,12 @@
     <div class="flex justify-between items-center">
       <div class="flex">
         <img
-          :src="mumble.user.profile_pic"
+          :src="mumble.original_mumble ? mumble.original_mumble.user.profile_pic : mumble.user.profile_pic"
           class="h-10 md:h-12 lg:h-14 rounded-full"
         />
         <div class="ml-4">
-          <p class="font-bold lg:text-lg dark:text-gray-200">{{mumble.user.username}}</p>
-          <p class="font-light dark:text-gray-200">@{{mumble.user.username}}</p>
+          <p class="font-bold lg:text-lg dark:text-gray-200">{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
+          <p class="font-light dark:text-gray-200">@{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
         </div>
       </div>
       <div>
@@ -46,9 +46,15 @@
     </div>
     <hr class="mt-4 mb-4 bg-gray-300 " />
     <div class="ml-5  grid grid-cols-3">
-      <fa class="dark:text-gray-200 ml-5" icon="comments"/>
+      <div>
+      <fa class="dark:text-gray-200 ml-5" icon="comments"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.comment_count : mumble.comment_count}}</span>
+      </div>
+      <div>
       <fa class="dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24" icon="comment"/>
+      </div>
+      <div>
       <fa class="dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-24 xl:ml-44" icon="paper-plane"/>
+      </div>
     </div>
   </div>
 </template>

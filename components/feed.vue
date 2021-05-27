@@ -6,7 +6,7 @@
       <textarea
         placeholder="Share your brilliant thought"
         v-model="content"
-        class="p-4 mt-4 bg-gray-100 dark:bg-gray-800 h-24 rounded-lg width-me border-2 border-gray-200 border-gray-300 focus:border-2 focus:outline-none focus:border-blue-300"
+        class="p-4 mt-4 bg-gray-100 dark:bg-gray-800 h-24 rounded-lg width-me border-2 border-gray-200 focus:border-2 focus:outline-none focus:border-blue-300"
       >
       </textarea>
       <div v-show="error" class="ml-2 text-red-500 font-bold trasition easy-in-out duration-500">Mumble can't be Empty</div>
