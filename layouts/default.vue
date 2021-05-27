@@ -12,7 +12,7 @@
           <sidenavbar current="home" />
         </div>
         <div class="col-span-3">
-          <Nuxt keep-alive />
+          <Nuxt/>
         </div>
       </div>
     </div>

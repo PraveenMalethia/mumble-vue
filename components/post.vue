@@ -44,11 +44,11 @@
         </p>
       </div>
     </div>
-    <hr class="mt-4 mb-4 bg-gray-300" />
-    <div class="ml-5">
-      <fa icon="comments"/>
-      <fa icon="comment"/>
-      <fa icon="paper-plane"/>
+    <hr class="mt-4 mb-4 bg-gray-300 " />
+    <div class="ml-5  grid grid-cols-3">
+      <fa class="dark:text-gray-200 ml-5" icon="comments"/>
+      <fa class="dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24" icon="comment"/>
+      <fa class="dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-24 xl:ml-44" icon="paper-plane"/>
     </div>
   </div>
 </template>
