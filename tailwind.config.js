@@ -16,14 +16,17 @@ module.exports = {
   },
   variants: {
     backgroundColor: [
+      "hover",
       "dark",
       "dark-hover",
       "dark-group-hover",
       "dark-even",
       "dark-odd"
     ],
-    borderColor: ["dark", "dark-focus", "dark-focus-within"],
-    textColor: ["dark", "dark-hover", "dark-active"]
+    borderColor: [
+      "hover", "dark", "dark-focus", "dark-focus-within"],
+    textColor: [
+      "hover", "dark", "dark-hover", "dark-active"]
   },
-  plugins: [],
+  plugins: [require('tailwindcss-dark-mode')()],
 }
