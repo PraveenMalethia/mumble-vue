@@ -5,11 +5,12 @@
     >
       <textarea
         placeholder="Share your brilliant thought"
+        v-model="content"
         class="p-4 mt-4 bg-gray-100 dark:bg-gray-800 h-24 rounded-lg width-me border-2 border-gray-200 border-gray-300 focus:border-2 focus:outline-none focus:border-blue-300"
       >
       </textarea>
 
-      <button class="btn-primary"><fa icon="code" /> Mumble Now</button>
+      <button class="btn-primary" @click="Mumble"><fa icon="code" /> Mumble Now</button>
     </div>
     <div v-for="post in posts" :key="post.id">
       <post :mumble="post" />
@@ -22,6 +23,7 @@ export default {
   data() {
     return {
       posts: [],
+      content:'',
     }
   },
   async fetch() {
@@ -29,6 +31,12 @@ export default {
       .get('https://mumbleapi.herokuapp.com/api/mumbles/')
       .then((res) => res.data.results)
   },
+  methods: {
+    Mumble(){
+      this.$axios.post('/api/mumbles/create/',{content:this.content})
+      .then((res) => this.$nuxt.refresh())
+    }
+  }
 }
 </script>
 
