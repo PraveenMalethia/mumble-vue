@@ -45,6 +45,11 @@
       </div>
     </div>
     <hr class="mt-4 mb-4 bg-gray-300" />
+    <div class="ml-5">
+      <fa icon="comments"/>
+      <fa icon="comment"/>
+      <fa icon="paper-plane"/>
+    </div>
   </div>
 </template>
 
