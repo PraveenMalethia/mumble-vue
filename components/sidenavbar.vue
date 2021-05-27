@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       tabs: [
+<<<<<<< HEAD
         { title: 'Home', id: 0, icon: 'home', to: '/' },
         { title: 'Inbox', id: 1, icon: 'inbox', to: '/inbox' },
         { title: 'Contributers', id: 2, icon: 'users', to: '/contributors' },
@@ -31,6 +32,15 @@ export default {
         { title: 'Discussions', id: 4, icon: 'users', to: '/discussion' },
         { title: 'Topics', id: 5, icon: 'tags', to: '/topics' },
         { title: 'Settings', id: 6, icon: 'cog', to: '/settings' },
+=======
+        { title: 'Home', id: 1, icon: 'home', to: '/' },
+        { title: 'Inbox', id: 2, icon: 'inbox', to: '/inbox' },
+        { title: 'Contributors', id: 3, icon: 'users', to: '/contributors' },
+        { title: 'Articles', id: 4, icon: 'file', to: '/articles' },
+        { title: 'Discussions', id: 5, icon: 'users', to: '/discussion' },
+        { title: 'Topics', id: 6, icon: 'tags', to: '/topics' },
+        { title: 'Settings', id: 7, icon: 'cog', to: '/settings' },
+>>>>>>> 37b222375e04678d333755b5259a4f5cab37b254
       ],
     }
   },
