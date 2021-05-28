@@ -53,7 +53,7 @@
       <fa class="dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24" icon="comment"/>
       </div>
       <div>
-      <fa class="dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-24 xl:ml-44" icon="paper-plane"/>
+      <fa class="dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-24 xl:ml-44" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
       </div>
     </div>
   </div>
