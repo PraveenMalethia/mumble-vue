@@ -1,12 +1,12 @@
 <template>
   <div class="mt-4">
     <div
-      class="bg-white shadow-sm dark:bg-gray-700 rounded-md py-5 px-5 border-2 dark:border-gray-400 border-gray-200 w-full md:w-11/12"
+      class="bg-white shadow-sm dark:bg-gray-800 rounded-md py-5 px-5 border-2 dark:border-gray-400 border-gray-200 w-full md:w-11/12"
     >
       <textarea
         placeholder="Share your brilliant thought"
         v-model="content"
-        class="p-4 mt-4 bg-gray-100 dark:bg-gray-800 h-24 rounded-lg width-me border-2 border-gray-200 focus:border-2 focus:outline-none focus:border-blue-300"
+        class="p-4 mt-4 bg-gray-100 dark:bg-gray-800 h-24 rounded-lg width-me border-2 border-gray-200 dark:text-gray-100 focus:border-2 focus:outline-none focus:border-blue-300"
       >
       </textarea>
       <div v-show="error" class="ml-2 text-red-500 font-bold trasition easy-in-out duration-500">Mumble can't be Empty</div>

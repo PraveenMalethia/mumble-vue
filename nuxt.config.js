@@ -83,7 +83,7 @@ export default {
 
   router: {
     middleware: ['auth'],
-    linkExactActiveClass: 'bg-gray-100 text-gray-300 rounded-md dark:bg-gray-800 px-4 py-2 bg-gradient-to-r from-gray-400 dark:from-gray-500'
+    linkExactActiveClass: 'bg-gray-100 text-gray-300 rounded-md dark:bg-gray-900 px-4 py-2 bg-gradient-to-r from-gray-400 dark:from-gray-500'
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

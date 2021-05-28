@@ -6,7 +6,7 @@
       <div class="mt-2">© Mumble Community 2021. <a href="https://github.com/divanov11/mumbleapi" target="_blank">Git</a></div>
       <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex dark:text-gray-200 dark:bg-gray-800">
         <a href="/" class="w-6 mx-1">
-          <fa class="dark:text-gray-200"/>
+          <fa icon="paper-plane" class="dark:text-gray-200"/>
         </a>
         <a href="/" class=" w-6 mx-1">
           

@@ -6,11 +6,11 @@
         class="h-10"
         style="border-radius: 50%"
       />
-      <p class="ml-2 text-gray-700 font-semibold dark:text-gray-200">
+      <p class="ml-2 text-gray-700 font-semibold dark:text-gray-300">
         {{ user.username }}
       </p>
     </div>
-    <button @click="FollowBtn()" :class="`btn-follow ${ follwing ? 'bg-purple-500 text-white' : 'bg-white text-purple-500'}`">{{follwing ? 'Following' : 'Follow'}}</button>
+    <button @click="FollowBtn()" :class="`btn-follow ${ follwing ? 'bg-purple-500 text-white' : 'text-purple-400'}`">{{follwing ? 'Following' : 'Follow'}}</button>
   </div>
 </template>
 

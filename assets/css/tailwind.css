@@ -4,7 +4,7 @@
 
 
 .btn-primary {
-  @apply px-6 py-2 mt-4 uppercase focus:outline-none border-2  border-purple-600 rounded-lg hover:text-white text-purple-500 hover:bg-purple-500 transition duration-300 ease-in-out dark:border-purple-500;
+  @apply px-6 py-2 mt-4 uppercase focus:outline-none border-2  border-purple-400 rounded-lg hover:text-white text-purple-400 hover:bg-purple-500 transition duration-300 ease-in-out dark:border-purple-500;
 }
 .btn-follow{
   @apply border-2 border-purple-600 dark:border-purple-500 py-1 px-3 rounded absolute right-5 mr-8  hover:bg-purple-500 hover:text-white transition ease-in duration-300 text-sm font-semibold

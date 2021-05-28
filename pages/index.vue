@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 grid md:grid-cols-3 m-auto dark:bg-gray-800">
+  <div class="bg-gray-100 grid md:grid-cols-3 m-auto dark:bg-gray-900">
     <div class="col-span-2 mt-10 md:mt-20">
       <feed />
     </div>
