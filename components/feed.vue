@@ -14,7 +14,7 @@
     </div>
     <div v-for="post in posts" :key="post.id">
       <client-only>
-      <post :mumble="post" />
+      <post :mumble="post" v-linkified:options="{className:'text-blue-500'}" />
       </client-only>
     </div>
   </div>
