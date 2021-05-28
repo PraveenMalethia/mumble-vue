@@ -13,8 +13,7 @@
     <hr class="w-full mb-4 bg-gray-300 rounded" />
     <div v-for="(contributor,i) in contributors" :key="contributor.id">
       <usermini v-if="i<6"
-        :image_src="contributor.profile.profile_pic"
-        :username="contributor.profile.username"
+        :user="contributor"
       />
     </div>
   </div>
