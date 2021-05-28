@@ -38,6 +38,7 @@ export default {
       if (this.content.length > 0){
         this.$axios.post('/api/mumbles/create/',{content:this.content})
       .then((res) => this.$nuxt.refresh())
+      this.content = null
       }
       else{
         this.error = true;
