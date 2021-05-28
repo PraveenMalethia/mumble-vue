@@ -73,7 +73,7 @@
             <div
               v-if="show_profile_items"	
             >
-              <section class="h-screen fixed absolute left-0" @click="dontShowProfileItems" style="width:100vw">
+              <section class="h-screen absolute left-0" @click="dontShowProfileItems" style="width:100vw">
 
               </section>
 
