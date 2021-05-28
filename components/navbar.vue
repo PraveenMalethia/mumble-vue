@@ -39,7 +39,8 @@
             </div>
             <img
               src="https://mumbleapi.herokuapp.com/static/images/default.png"
-              class="h-10 mr-4 md:mr-12 lg:mr-16"
+              @click="showProfileItems()"
+              class="h-10 mr-4 ml-4 md:mr-12 lg:mr-16"
             />
           </div>
 
@@ -50,7 +51,7 @@
           <div class="abolute">
             <div
               v-if="show_items"
-              class="absolute transition ease-in-out duration-1000 shadow-xl right-4 cursor-pointer bg-white rounded-md py-3 w-72 mt-4"
+              class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
             >
               <div class="flex hover:bg-gray-200 rounded-md w-full px-2 py-4">
                 <img
@@ -67,12 +68,50 @@
               <div class="flex hover:bg-gray-200 rounded-md w-full px-2 py-2">
                 <img
                   src="https://mumbleapi.herokuapp.com/static/images/pravenn.jpg"
+                  style="border-radius: 50%"
                   class="h-10"
                 />
 
                 <p class="ml-4 text-base font-medium text-blue-500">
                   A mumble mentiong Praveen Malethia was created.
                 </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="abolute z-20">
+            <div
+              v-if="show_profile_items"
+              class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer bg-white
+              dark:bg-gray-900 rounded-md w-72 mt-4"
+            >
+              <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+                <p class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                  <span v-if="$colorMode.preference == 'light' " @click="$colorMode.preference = 'dark' ">
+                    <fa icon="moon" class="mr-2"></fa>Enable Dark Mode
+                  </span>
+                  <span v-if="$colorMode.preference == 'dark' " @click="$colorMode.preference = 'light' ">
+                    <fa icon="sun" class="mr-2"></fa> Enable Light Mode
+                  </span>
+                </p>
+              </div>
+
+              <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+                <router-link to="/profile" class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                  <fa icon="user" class="mr-2"></fa> Profile
+                </router-link>
+              </div>
+
+              <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+                <router-link to="/settings" class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                  <fa icon="cog" class="mr-2"></fa> Settings
+                </router-link>
+              </div>
+
+              <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+                <button class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                  <fa icon="sign-out-alt" class="mr-2"></fa> Log Out
+                </button>
               </div>
             </div>
           </div>
@@ -88,12 +127,21 @@ export default {
   data() {
     return {
       show_items: false,
+      show_profile_items: false
     }
   },
   methods: {
     ShowNotifications() {
+      this.show_profile_items = false
+
       this.show_items = !this.show_items
     },
+    showProfileItems(){
+      this.show_items = false
+
+      this.show_profile_items = !this.show_profile_items
+    }
   },
 }
 </script>
+
