@@ -25,18 +25,6 @@
             >
               <fa class="cursor-finger" icon="bell" />
             </button>
-            <div class="dark:bg-gray-800 dark:text-gray-200">
-              <p class="focus:outline-none">
-                <select
-                  v-model="$colorMode.preference"
-                  class="border-2 border-white rounded w-24 h-8 dark:bg-gray-900 dark:text-white dark:border-gray-200"
-                >
-                  <option value="system">System</option>
-                  <option value="light">Light</option>
-                  <option value="dark">Dark</option>
-                </select>
-              </p>
-            </div>
             <img
               src="https://mumbleapi.herokuapp.com/static/images/default.png"
               @click="showProfileItems()"
@@ -109,7 +97,7 @@
               </div>
 
               <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                <button class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                <button @click="Logout()" class="ml-4 text-base dark:text-gray-200 text-gray-800">
                   <fa icon="sign-out-alt" class="mr-2"></fa> Log Out
                 </button>
               </div>
@@ -140,6 +128,9 @@ export default {
       this.show_items = false
 
       this.show_profile_items = !this.show_profile_items
+    },
+    async Logout(){
+      await this.$auth.logout()
     }
   },
 }
