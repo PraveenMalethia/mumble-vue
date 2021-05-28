@@ -12,7 +12,7 @@
     </div>
     <hr class="w-full mb-4 bg-gray-300 rounded" />
     <div v-for="(contributor,i) in contributors" :key="contributor.id">
-      <usermini v-if="i<6"
+      <usermini v-if="i<4"
         :user="contributor"
       />
     </div>

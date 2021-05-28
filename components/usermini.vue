@@ -28,26 +28,22 @@ export default {
     }
   },
   mounted() {
-    console.log(this.user.profile.followers)
     for (var i = 0; i < this.user.profile.followers.length; i++){
       if (this.$auth.user.id == this.user.profile.followers[i]){
         this.follwing = true
       }
     }
-    console.log(this.$auth.user.id)
-    console.log(this.follwing)
   },
   methods: {
     FollowBtn() {
       this.$axios
         .post(`/api/users/${this.user.username}/follow/`)
         .then((res) => {
-          console.log(res)
+          this.$nuxt.refresh()
         })
         .catch((err) => {
           console.log(err)
         })
-      this.$nuxt.refresh()
     },
   },
 }

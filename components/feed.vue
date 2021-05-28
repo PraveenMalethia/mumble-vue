@@ -13,7 +13,9 @@
       <button class="btn-primary" @click="Mumble"><fa icon="code" /> Mumble Now</button>
     </div>
     <div v-for="post in posts" :key="post.id">
+      <client-only>
       <post :mumble="post" />
+      </client-only>
     </div>
   </div>
 </template>
@@ -42,6 +44,9 @@ export default {
       }
       else{
         this.error = true;
+        setTimeout(() => {
+          this.error = false;
+        }, 2000)
       }
     }
   }
