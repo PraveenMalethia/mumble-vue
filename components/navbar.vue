@@ -58,6 +58,7 @@
                   src="https://mumbleapi.herokuapp.com/static/images/pravenn.jpg"
                   style="border-radius: 50%"
                   class="h-10"
+                  alt="User Profile"
                 />
 
                 <p class="ml-4 text-base font-medium text-blue-500">

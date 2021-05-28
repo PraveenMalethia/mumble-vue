@@ -5,6 +5,7 @@
         :src="user.profile.profile_pic"
         class="h-10"
         style="border-radius: 50%"
+        :alt="user.username+' profile pic'"
       />
       <p class="ml-2 text-gray-700 font-semibold dark:text-gray-300">
         {{ user.username }}
