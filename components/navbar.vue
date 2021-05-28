@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                  <button class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                  <button @click="Logout()" class="ml-4 text-base dark:text-gray-200 text-gray-800">
                     <fa icon="sign-out-alt" class="mr-2"></fa> Log Out
                   </button>
                 </div>
@@ -149,6 +149,9 @@ export default {
     },
     dontShowProfileItems(){
       this.show_profile_items = false
+    },
+    async Logout(){
+      await this.$auth.logout()
     }
   },
 }
