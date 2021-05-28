@@ -59,6 +59,7 @@
                   style="border-radius: 50%"
                   class="h-10"
                   alt="User Profile"
+
                 />
 
                 <p class="ml-4 text-base font-medium text-blue-500">
@@ -70,37 +71,42 @@
 
           <div class="abolute z-20">
             <div
-              v-if="show_profile_items"
-              class="absolute transition ease-in-out duration-500 shadow-xl right-6 cursor-pointer bg-white
-              dark:bg-gray-900 rounded-md w-72 mt-4"
+              v-if="show_profile_items"	
             >
-              <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                <p class="ml-4 text-base dark:text-gray-200 text-gray-800">
-                  <span v-if="$colorMode.preference == 'light' " @click="$colorMode.preference = 'dark' ">
-                    <fa icon="moon" class="mr-2"></fa>Enable Dark Mode
-                  </span>
-                  <span v-if="$colorMode.preference == 'dark' " @click="$colorMode.preference = 'light' ">
-                    <fa icon="sun" class="mr-2"></fa> Enable Light Mode
-                  </span>
-                </p>
-              </div>
+              <section class="h-screen absolute left-0" @click="dontShowProfileItems" style="width:100vw">
 
-              <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                <router-link to="/profile" class="ml-4 text-base dark:text-gray-200 text-gray-800">
-                  <fa icon="user" class="mr-2"></fa> Profile
-                </router-link>
-              </div>
+              </section>
 
-              <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                <router-link to="/settings" class="ml-4 text-base dark:text-gray-200 text-gray-800">
-                  <fa icon="cog" class="mr-2"></fa> Settings
-                </router-link>
-              </div>
+              <div  class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer bg-white
+              dark:bg-gray-900 rounded-md w-72 mt-4">
+                <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+                  <p class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                    <span v-if="$colorMode.preference == 'light' " @click="$colorMode.preference = 'dark' ">
+                      <fa icon="moon" class="mr-2"></fa>Enable Dark Mode
+                    </span>
+                    <span v-if="$colorMode.preference == 'dark' " @click="$colorMode.preference = 'light' ">
+                      <fa icon="sun" class="mr-2"></fa> Enable Light Mode
+                    </span>
+                  </p>
+                </div>
 
-              <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                <button @click="Logout()" class="ml-4 text-base dark:text-gray-200 text-gray-800">
-                  <fa icon="sign-out-alt" class="mr-2"></fa> Log Out
-                </button>
+                <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+                  <router-link to="/profile" class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                    <fa icon="user" class="mr-2"></fa> Profile
+                  </router-link>
+                </div>
+
+                <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+                  <router-link to="/settings" class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                    <fa icon="cog" class="mr-2"></fa> Settings
+                  </router-link>
+                </div>
+
+                <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+                  <button @click="Logout()" class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                    <fa icon="sign-out-alt" class="mr-2"></fa> Log Out
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -111,6 +117,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'NavBar',
   data() {
@@ -130,10 +137,14 @@ export default {
 
       this.show_profile_items = !this.show_profile_items
     },
+    dontShowProfileItems(){
+      this.show_profile_items = false
+    },
     async Logout(){
       await this.$auth.logout()
     }
   },
 }
 </script>
+
 
