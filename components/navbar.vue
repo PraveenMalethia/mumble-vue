@@ -41,31 +41,9 @@
               v-if="show_items"
               class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
             >
-              <div class="flex hover:bg-gray-200 rounded-md w-full px-2 py-4">
-                <img
-                  src="https://mumbleapi.herokuapp.com/static/images/pravenn.jpg"
-                  class="h-10"
-                  style="border-radius: 50%"
-                />
-
-                <p class="ml-4 text-base font-medium text-blue-500">
-                  A mumble mentiong Praveen Malethia was created.
-                </p>
-              </div>
-
-              <div class="flex hover:bg-gray-200 rounded-md w-full px-2 py-2">
-                <img
-                  src="https://mumbleapi.herokuapp.com/static/images/pravenn.jpg"
-                  style="border-radius: 50%"
-                  class="h-10"
-                  alt="User Profile"
-
-                />
-
-                <p class="ml-4 text-base font-medium text-blue-500">
-                  A mumble mentiong Praveen Malethia was created.
-                </p>
-              </div>
+            <div v-for="noti in notifications" :key="noti.id">
+              <Notification :notification="noti"/>
+            </div>
             </div>
           </div>
 
@@ -120,10 +98,22 @@
 
 export default {
   name: 'NavBar',
+  // async fetch(){
+  //   await this.$axios.get('/api/notifications/')
+  //   .then((response) =>{
+  //     console.log(response.data)
+  //   })
+  //   .catch((error)=>{
+  //     console.log(error)
+  //   })
+  // },
   data() {
     return {
       show_items: false,
-      show_profile_items: false
+      show_profile_items: false,
+      notifications:[
+        {id:1, data:'This is a Dynamic Notification'}
+      ]
     }
   },
   methods: {

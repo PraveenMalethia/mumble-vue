@@ -20,14 +20,14 @@
     <div class="flex items-center px-4 py-2">
       <div>
         <button
-          @click="UpdateVote('upvote')"
+          @click="UpdateVote('upvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
           class="px-1 focus:outline-none text-green-300"
         >
           <fa icon="chevron-up" />
         </button>
         <p class="pl-1.5 dark:text-gray-200">{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
         <button
-          @click="UpdateVote('downvote')"
+          @click="UpdateVote('downvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
           class="px-1 focus:outline-none text-red-400"
         >
           <fa icon="chevron-down" />
@@ -73,8 +73,8 @@ export default {
     }
   },
   methods: {
-    UpdateVote(vote) {
-      this.$axios.post('/api/mumbles/vote/',{post_id:this.mumble.id,value:vote})
+    UpdateVote(vote,id) {
+      this.$axios.post('/api/mumbles/vote/',{post_id:id,value:vote})
       .then(()=>{
         this.$nuxt.refresh()
       })
