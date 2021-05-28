@@ -67,6 +67,11 @@ export default {
       required: true,
     },
   },
+  data:()=>{
+    return {
+      loading: true,
+    }
+  },
   methods: {
     UpdateVote(vote) {
       this.$axios.post('/api/mumbles/vote/',{post_id:this.mumble.id,value:vote})

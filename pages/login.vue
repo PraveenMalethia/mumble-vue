@@ -58,7 +58,9 @@
       </div>
       <div class="w-full py-6 z-20">
         <div class="w-full">
-          <h1 class="xs:text-3xl md:text-4xl lg:text-5xl font-bold justify-center">
+          <h1
+            class="xs:text-3xl md:text-4xl lg:text-5xl font-bold justify-center"
+          >
             A PLACE FOR DEVELOPERS TO
           </h1>
           <p class="text-2xl my-4">
@@ -66,7 +68,8 @@
           </p>
         </div>
         <div class="py-6 space-x-2 justify-center flex">
-          <img src="/icon.png" width="100" height="100"><p class="text-5xl md:pt-5 font-bold text-indigo-400">MUMBLE</p>
+          <img src="/icon.png" width="100" height="100" />
+          <p class="text-5xl md:pt-5 font-bold text-indigo-400">MUMBLE</p>
         </div>
         <div class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
           <div class="pb-2 pt-4">
@@ -89,22 +92,22 @@
               placeholder="Password"
             />
           </div>
-          <div class="text-right dark:text-gray-400 dark:text-gray-100">
+          <div class="text-right dark:text-gray-100">
             <a href="#">Forgot your password?</a>
           </div>
           <div class="px-4 pb-2 pt-4">
-            <button
-              @click="login()"
-              class="btn-primary block w-full">
+            <button type="button" class="bg-rose-600" disabled>
+              <svg class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
+                <!-- ... -->
+              </svg>
+              Processing
+            </button>
+            <button @click="login()" class="btn-primary block w-full">
               sign in
             </button>
           </div>
           <div class="px-4 pb-2 pt-4">
-            <button
-              class="btn-primary block w-full"
-            >
-              New Here ? Sign Up
-            </button>
+            <button class="btn-primary block w-full">New Here ? Sign Up</button>
           </div>
 
           <div
