@@ -82,7 +82,7 @@
           <div class="abolute z-20">
             <div
               v-if="show_profile_items"
-              class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer bg-white
+              class="absolute transition ease-in-out duration-500 shadow-xl right-6 cursor-pointer bg-white
               dark:bg-gray-900 rounded-md w-72 mt-4"
             >
               <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
