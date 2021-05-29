@@ -1,10 +1,10 @@
 <template>
     <div
-      class="bg-gray-100 flex flex-wrap-reverse flex-col grid md:grid-cols-3 m-auto dark:bg-gray-800"
+      class="bg-gray-100 flex flex-wrap-reverse flex-col md:grid-cols-3 m-auto dark:bg-gray-800"
     >
       <div class="block w-full md:hidden mb-4 mt-10">
         <div
-          class="bg-white w-full rounded-md border-2 border-gray-200 mt-4 px-6 pt-4 py-4 w-full"
+          class="bg-white w-full rounded-md border-2 border-gray-200 mt-4 px-6 pt-4 py-4"
         >
           <div class="px-4 py-2">
             <img
