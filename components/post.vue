@@ -47,20 +47,16 @@
     <hr class="mt-4 mb-4 bg-gray-300 " />
     <div class="ml-5  grid grid-cols-3">
       <div>
-        <a @click="show_comments = !show_comments" class="cursor-pointer">
-          <fa class="dark:text-gray-200 ml-5 hover:text-purple-500 transition ease-in-out duration-300" icon="comments"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.comment_count : mumble.comment_count}}</span>
-        </a>
+        <fa class="cursor-pointer dark:text-gray-200 ml-5 hover:text-purple-500 transition ease-in-out duration-300" icon="comments"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.comment_count : mumble.comment_count}}</span>
       </div>
       <div>
-        <a @click="show = !show" class="cursor-pointer">
-          <fa class="dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
-        </a>
+        <fa class="cursor-pointer dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
       </div>
       <div>
-      <fa class="dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
+      <fa @click="show = ! show" class="cursor-pointer dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
       </div>
     </div>
-    <div v-if="show && !show_comments" class="ml-5  grid grid-cols-1">
+    <div v-if="show" class="ml-5  grid grid-cols-1">
       <textarea
         placeholder="Share your brilliant thought"
         v-model="comment"
@@ -85,7 +81,7 @@ export default {
       loading: true,
       comment: '',
       show: false,
-      show_comments:false,
+      show_comments: false,
     }
   },
   methods: {
