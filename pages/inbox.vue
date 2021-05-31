@@ -1,6 +1,12 @@
 <template>
-  <div class="min-h-screen">
-    <h1>Welcome to Inbox</h1>
+  <div class="bg-gray-100 grid grid-cols-9 m-auto dark:bg-gray-900 mb-20 w-screen md:w-full">
+    <div class="col-span-2 md:col-span-3 mt-10 md:mt-20 rounded-l-md overflow-hidden">
+      <contacts />  
+    </div>
+
+    <div class="col-span-7 md:col-span-6 block mt-10 md:mt-20 md:ml-15">
+      <chats class="w-full" />
+    </div>
   </div>
 </template>
 
@@ -22,4 +28,12 @@ export default {
 </script>
 
 <style>
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #c4d0d3;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #5aa5b9;
+    border-radius: 5px;
+}
 </style>
