@@ -30,5 +30,14 @@ export default {
   methods: {},
 }
 </script>
+
 <style>
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #c4d0d3;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #5aa5b9;
+    border-radius: 5px;
+}
 </style>
