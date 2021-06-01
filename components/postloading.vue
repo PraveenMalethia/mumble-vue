@@ -19,6 +19,12 @@
                 <div class="rounded bg-gray-400 dark:bg-gray-300 h-5 mt-2 w-9/12"></div>
                 <div class="rounded bg-gray-400 dark:bg-gray-300 h-5 mt-2 w-11/12"></div>
             </div>
+            
+            <div class="mt-8 pl-4 pr-6 w-full flex justify-between">
+                <div class="rounded bg-gray-400 dark:bg-gray-300 h-3 w-10"></div>
+                <div class="rounded bg-gray-400 dark:bg-gray-300 h-3 w-10"></div>
+                <div class="rounded bg-gray-400 dark:bg-gray-300 h-3 w-10"></div>
+            </div>
         </div>
     </div>
 
