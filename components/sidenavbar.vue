@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 ml-24 mt-0 fixed hidden md:block">
+  <div class="px-4 ml-24 mt-0 fixed block overflow-y-auto lg:overflow-visible">
     <div v-for="tab in tabs" :key="tab.id">
       <router-link :to="tab.to">
 
