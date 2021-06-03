@@ -26,7 +26,7 @@
             mumble.original_mumble.upVoters.filter(user => user.username == $auth.user.username).length : 
             mumble.upVoters.filter(user => user.username == $auth.user.username).length}"
           >
-            <fa icon="caret-up" class="fa-2x fa"/>
+            <fa icon="caret-up" class="fa-2x"/>
           </button>
           
           <p class="pl-1.5 dark:text-gray-200 mr-1">{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
@@ -38,7 +38,7 @@
             mumble.original_mumble.downVoters.filter(user => user.username == $auth.user.username).length : 
             mumble.downVoters.filter(user => user.username == $auth.user.username).length}"
           >
-            <fa icon="caret-down" @click="VoteMumble" style="text-shadow: 0 0 3px blue" />
+            <fa icon="caret-down" class="fa-2x" />
           </button>
       </div>
       <div class="ml-6">
