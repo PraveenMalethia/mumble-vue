@@ -9,8 +9,8 @@
           class="h-10 md:h-12 lg:h-14 rounded-full"
         />
         <div class="ml-4">
-          <p class="font-bold lg:text-lg dark:text-gray-200">{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
-          <p class="font-light dark:text-gray-200">@{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
+          <p class="font-bold lg:text-lg dark:text-gray-200 cursor-pointer">{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
+          <p class="font-light dark:text-gray-200 cursor-pointer">@{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
         </div>
       </div>
       <div>
@@ -18,20 +18,28 @@
       </div>
     </div>
     <div class="flex items-center px-4 py-2">
-      <div>
+      <div class="flex flex-col justify-center items-center">
         <button
-          @click="UpdateVote('upvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
-          class="px-1 focus:outline-none text-green-300"
-        >
-          <fa icon="chevron-up" />
-        </button>
-        <p class="pl-1.5 dark:text-gray-200">{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
-        <button
-          @click="UpdateVote('downvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
-          class="px-1 focus:outline-none text-red-400"
-        >
-          <fa icon="chevron-down" />
-        </button>
+            @click="UpdateVote('upvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
+            class="px-1 focus:outline-none text-gray-600 dark:text-gray-200"
+            :class="{'text-green-400 dark:text-green-300':mumble.original_mumble ? 
+            mumble.original_mumble.upVoters.filter(user => user.username == $auth.user.username).length : 
+            mumble.upVoters.filter(user => user.username == $auth.user.username).length}"
+          >
+            <fa icon="caret-up" class="fa-2x fa"/>
+          </button>
+          
+          <p class="pl-1.5 dark:text-gray-200 mr-1">{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
+
+          <button
+            @click="UpdateVote('downvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
+            class="px-1 focus:outline-none text-gray-600 dark:text-gray-200"
+            :class="{'dark:text-red-400 text-red-600':mumble.original_mumble ? 
+            mumble.original_mumble.downVoters.filter(user => user.username == $auth.user.username).length : 
+            mumble.downVoters.filter(user => user.username == $auth.user.username).length}"
+          >
+            <fa icon="caret-down" @click="VoteMumble" style="text-shadow: 0 0 3px blue" />
+          </button>
       </div>
       <div class="ml-6">
         <p>
