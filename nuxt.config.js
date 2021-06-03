@@ -109,7 +109,7 @@ export default {
     },
   },
   tailwindcss: {
-    mode:'jit',
+    jit:true,
     // add '~tailwind.config` alias
     exposeConfig: true
   },
