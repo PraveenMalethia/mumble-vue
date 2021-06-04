@@ -55,7 +55,7 @@
 
               </section>
 
-              <div  class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer bg-white
+              <div  class="absolute transition ease-in-out duration-800 shadow-xl right-6 cursor-pointer bg-white
               dark:bg-gray-900 rounded-md w-72 mt-4">
                 <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
                   <p class="ml-4 text-base dark:text-gray-200 text-gray-800">
