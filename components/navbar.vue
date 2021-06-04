@@ -19,16 +19,16 @@
 
         <div>
           <div class="flex items-center">
-            <button
-              class="text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6 focus:outline-none"
+            <div
+              class="cursor-pointer text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6 focus:outline-none"
               @click="ShowNotifications()"
             >
               <fa class="cursor-finger" icon="bell" />
-            </button>
+            </div>
             <img
               :src="this.$auth.user.profile.profile_pic? this.$auth.user.profile.profile_pic : 'https://mumbleapi.herokuapp.com/static/images/default.png'"
               @click="showProfileItems()"
-              class="h-10 mr-4 ml-4 md:mr-12 lg:mr-16 rounded-full"
+              class="h-10 mr-4 ml-4 md:mr-12 lg:mr-16 rounded-full cursor-pointer"
             />
           </div>
 
