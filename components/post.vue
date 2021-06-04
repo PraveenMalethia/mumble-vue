@@ -61,7 +61,7 @@
         <fa class="cursor-pointer dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
       </div>
       <div>
-      <fa @click="show = ! show" class="cursor-pointer dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
+      <fa @click="show = !show" class="cursor-pointer dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
       </div>
     </div>
     <div v-if="show" class="ml-5  grid grid-cols-1">
