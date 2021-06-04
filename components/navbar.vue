@@ -26,7 +26,11 @@
               <fa class="cursor-finger" icon="bell" />
             </div>
             <img
-              :src="this.$auth.user.profile.profile_pic? this.$auth.user.profile.profile_pic : 'https://mumbleapi.herokuapp.com/static/images/default.png'"
+              :src="
+                this.$auth.user.profile.profile_pic
+                  ? this.$auth.user.profile.profile_pic
+                  : 'https://mumbleapi.herokuapp.com/static/images/default.png'
+              "
               @click="showProfileItems()"
               class="h-10 mr-4 ml-4 md:mr-12 lg:mr-16 rounded-full cursor-pointer"
             />
@@ -41,47 +45,68 @@
               v-if="show_items"
               class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
             >
-            <div v-for="noti in notifications" :key="noti.id">
-              <Notification :notification="noti"/>
-            </div>
+              <div v-for="noti in notifications" :key="noti.id">
+                <Notification :notification="noti" />
+              </div>
             </div>
           </div>
-
           <div class="abolute z-20">
-            <div
-              v-if="show_profile_items"	
-            >
-              <section class="h-screen absolute left-0" @click="dontShowProfileItems" style="width:100vw">
-
-              </section>
-
-              <div  class="absolute transition ease-in-out duration-800 shadow-xl right-6 cursor-pointer bg-white
-              dark:bg-gray-900 rounded-md w-72 mt-4">
-                <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
+            <div v-if="show_profile_items">
+              <section
+                class="h-screen absolute left-0"
+                @click="dontShowProfileItems"
+                style="width: 100vw"
+              ></section>
+              <div
+                class="absolute transition ease-in-out duration-800 shadow-xl right-6 cursor-pointer bg-white dark:bg-gray-900 rounded-md w-72 mt-4"
+              >
+                <div
+                  class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4"
+                >
                   <p class="ml-4 text-base dark:text-gray-200 text-gray-800">
-                    <span v-if="$colorMode.preference == 'light' " @click="$colorMode.preference = 'dark' ">
+                    <span
+                      v-if="$colorMode.preference == 'light'"
+                      @click="$colorMode.preference = 'dark'"
+                    >
                       <fa icon="moon" class="mr-2"></fa>Enable Dark Mode
                     </span>
-                    <span v-if="$colorMode.preference == 'dark' " @click="$colorMode.preference = 'light' ">
+                    <span
+                      v-if="$colorMode.preference == 'dark'"
+                      @click="$colorMode.preference = 'light'"
+                    >
                       <fa icon="sun" class="mr-2"></fa> Enable Light Mode
                     </span>
                   </p>
                 </div>
-
-                <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                  <router-link to="/profile" class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                <div
+                  class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4"
+                >
+                  <router-link
+                    to="/profile"
+                    class="ml-4 text-base dark:text-gray-200 text-gray-800"
+                  >
                     <fa icon="user" class="mr-2"></fa> Profile
                   </router-link>
                 </div>
 
-                <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                  <router-link to="/settings" class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                <div
+                  class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4"
+                >
+                  <router-link
+                    to="/settings"
+                    class="ml-4 text-base dark:text-gray-200 text-gray-800"
+                  >
                     <fa icon="cog" class="mr-2"></fa> Settings
                   </router-link>
                 </div>
 
-                <div class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4">
-                  <button @click="Logout()" class="ml-4 text-base dark:text-gray-200 text-gray-800">
+                <div
+                  class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4"
+                >
+                  <button
+                    @click="Logout()"
+                    class="ml-4 text-base dark:text-gray-200 text-gray-800"
+                  >
                     <fa icon="sign-out-alt" class="mr-2"></fa> Log Out
                   </button>
                 </div>
@@ -95,7 +120,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'NavBar',
   // async fetch(){
@@ -111,9 +135,7 @@ export default {
     return {
       show_items: false,
       show_profile_items: false,
-      notifications:[
-        {id:1, data:'This is a Dynamic Notification'}
-      ]
+      notifications: [{ id: 1, data: 'This is a Dynamic Notification' }],
     }
   },
   methods: {
@@ -122,17 +144,17 @@ export default {
 
       this.show_items = !this.show_items
     },
-    showProfileItems(){
+    showProfileItems() {
       this.show_items = false
 
       this.show_profile_items = !this.show_profile_items
     },
-    dontShowProfileItems(){
+    dontShowProfileItems() {
       this.show_profile_items = false
     },
-    async Logout(){
+    async Logout() {
       await this.$auth.logout()
-    }
+    },
   },
 }
 </script>
