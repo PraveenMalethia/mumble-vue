@@ -1,6 +1,11 @@
 <template>
-  <div class="min-h-screen">
-    <h1>Welcome to Contributers page</h1>
+  <div class="bg-gray-100 dark:bg-gray-900 mb-20 w-screen md:w-full mt-10 md:mt-20 rounded-l-md overflow-hidden">
+    <div v-for="contributor in contributors" :key="contributor.id">
+      <contributor
+        class="mt-4"
+        :user="contributor"
+      />
+    </div>
   </div>
 </template>
 
@@ -17,6 +22,16 @@ export default {
         content: 'Mumble | Tech space for real developers',
       },
     ],
+  },
+  data() {
+    return {
+      contributors: [],
+    }
+  },
+  async fetch() {
+    this.contributors = await this.$axios
+      .get('https://mumbleapi.herokuapp.com/api/users/')
+      .then((res) => res.data.results)
   },
 }
 </script>
