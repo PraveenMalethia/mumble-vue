@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white dark:bg-gray-800 w-full md:w-11/12 rounded-md border-2 border-gray-200 mt-6 py-6 px-4">
+    <div class="bg-white dark:bg-gray-800 w-full md:w-11/12 rounded-md border-2 border-gray-200 dark:border-transparent mt-6 py-6 px-4">
         <div class="animate-pulse w-full">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white dark:bg-gray-800 rounded-md border-2 border-gray-200 dark:border-gray-300 w-full"
+    class="bg-white dark:bg-gray-800 rounded-md border-2 border-gray-200 dark:border-transparent w-full"
   >
     <div class="px-6 pt-4 py-4 w-full">
       <p class="text-gray-500 font-semibold text-2xl mb-2 dark:text-gray-200">
@@ -10,7 +10,7 @@
         >View More</router-link
       >
     </div>
-    <hr class="w-full mb-4 bg-gray-300 rounded" />
+    <hr class="w-full mb-4 bg-gray-300 dark:border dark:border-gray-700 dark:bg-gray-700 rounded" />
     <div v-for="(contributor,i) in contributors" :key="contributor.id">
       <usermini v-if="i<4"
         :user="contributor"
