@@ -19,18 +19,16 @@
     </div>
     <div class="flex items-center px-4 py-2">
       <div class="flex flex-col justify-center items-center">
-        <button
+        <div
             @click="UpdateVote('upvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
-            class="px-1 focus:outline-none text-gray-600 dark:text-gray-200"
+            class="cursor-pointer px-1 focus:outline-none text-gray-600 dark:text-gray-200"
             :class="{'text-green-400 dark:text-green-300':mumble.original_mumble ? 
             mumble.original_mumble.upVoters.filter(user => user.username == $auth.user.username).length : 
             mumble.upVoters.filter(user => user.username == $auth.user.username).length}"
           >
             <fa icon="caret-up" class="fa-2x"/>
-          </button>
-          
-          <p class="pl-1.5 dark:text-gray-200 mr-1">{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
-
+          </div>
+          <p class="pl-1.5 dark:text-gray-200 mr-1"> {{ positive ? '-' : '+'}}{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
           <button
             @click="UpdateVote('downvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
             class="px-1 focus:outline-none text-gray-600 dark:text-gray-200"
@@ -87,6 +85,25 @@ export default {
       required: true,
     },
   },
+  mounted() {
+    console.log(this.mumble)
+    if (this.mumble.original_mumble != null){
+      if(this.mumble.original_mumble.vote_rank > 0){
+        this.positive = true
+      }
+      else{
+        this.positive = false
+      }
+    }
+    else{
+      if(this.mumble.vote_rank > 0){
+        this.positive = true
+      }
+      else{
+        this.positive = false
+      }
+    }
+  },
   data: () => {
     return {
       loading: true,
@@ -95,6 +112,7 @@ export default {
       upvote:false,
       downvote:false,
       show_comments: false,
+      positive:null,
     }
   },
   methods: {
@@ -102,8 +120,11 @@ export default {
       this.$axios
         .post('/api/mumbles/vote/', { post_id: id, value: vote })
         .then((response) => {
-          console.log(response)
+          console.log(response.data)
           this.$nuxt.refresh()
+        })
+        .catch((error) => {
+          console.log(error)
         })
     },
     moment: function (date) {
