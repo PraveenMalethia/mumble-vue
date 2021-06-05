@@ -1,6 +1,6 @@
 <template>
-  <div
-    class="bg-white dark:bg-gray-800 w-full md:w-11/12 rounded-md border-2 border-gray-200 mt-6 py-6 px-4"
+ <div
+    class="bg-white dark:bg-gray-800 w-full md:w-11/12 rounded-md border-2 border-gray-200 dark:border-transparent mt-6 py-6 px-4"
   >
     <div class="flex justify-between items-center">
       <div class="flex">
@@ -52,7 +52,7 @@
         </p>
       </div>
     </div>
-    <hr class="mt-4 mb-4 bg-gray-300 " />
+    <hr class="mt-4 mb-4 bg-gray-300 dark:border dark:border-gray-700 dark:bg-gray-700" />
     <div class="ml-5  grid grid-cols-3">
       <div>
         <fa class="cursor-pointer dark:text-gray-200 ml-5 hover:text-purple-500 transition ease-in-out duration-300" icon="comments"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.comment_count : mumble.comment_count}}</span>
