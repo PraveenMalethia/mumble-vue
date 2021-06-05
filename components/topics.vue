@@ -11,7 +11,7 @@
       >
     </div>
 
-    <hr class="w-full bg-gray-400 rounded" />
+    <hr class="w-full bg-gray-400 dark:border dark:border-gray-700 dark:bg-gray-700 rounded" />
 
     <div class="flex-wrap px-3 py-2">
       <tags text="Javascript" />
