@@ -1,34 +1,34 @@
 <template>
     <div
-      class="bg-gray-100 flex flex-wrap-reverse flex-col md:grid-cols-3 m-auto dark:bg-gray-800"
+      class="bg-gray-100 flex dark:text-gray-300 text-gray-800 flex-wrap-reverse flex-col md:grid-cols-3 m-auto dark:bg-gray-900"
     >
-      <div class="block w-full md:hidden mb-4 mt-10">
+      <div class="block w-full mb-4 mt-10">
         <div
-          class="bg-white w-full rounded-md border-2 border-gray-200 mt-4 px-6 pt-4 py-4"
+          class="bg-white dark:bg-gray-700 w-full dark:border-transparent rounded-md border-2 border-gray-200 mt-4 px-6 pt-4 py-4"
         >
           <div class="px-4 py-2">
             <img
-              src="https://mumbleapi.herokuapp.com/static/images/pravenn.jpg"
+              :src="$auth.user.profile.profile_pic"
               class="h-44 m-auto rounded-full"
             />
             <center>
               <p
-                class="text-2xl m-auto mt-6 justify-self-center text-gray-500 font-semibold"
+                class="text-2xl m-auto mt-6 justify-self-center font-semibold"
               >
-                {{ $route.params.username }}
+                {{ $auth.user.username }}
               </p>
             </center>
             <p class="text-lg font-light mt-4">
-              Proffesional Web devolver! Using django and vue js.
+              {{ $auth.user.profile.bio }}
             </p>
             <div class="flex items-center justify-center mt-6">
               <div class="flex-col">
-                <p class="text-2xl text-gray-500 font-light px-2">+0</p>
-                <p class="mt-2 text-gray-500">Vote ratio</p>
+                <p class="text-2xl  font-light px-2">+0</p>
+                <p class="mt-2 0">Vote ratio</p>
               </div>
               <div class="flex-col ml-4">
-                <p class="text-2xl text-gray-500 font-light px-2">78</p>
-                <p class="mt-2 text-gray-500">Followers</p>
+                <p class="text-2xl  font-light px-2">78</p>
+                <p class="mt-2 ">Followers</p>
               </div>
             </div>
             <center>
@@ -40,54 +40,12 @@
             </center>
           </div>
         </div>
-        <topics title="Skills" class="pr-5 w-11/12" />
+        <topics title="Skills" class="" />
       </div>
       <div class="md:col-span-2 block md:mt-20">
-        <div v-for="post in posts" :key="post.id">
+        <!-- <div v-for="post in posts" :key="post.id">
           <post :mumble="post" />
-        </div>
-      </div>
-      <div
-        class="hidden md:block col-span-1 mb-10 ml-4 block mt-10 md:mt-20 md:-ml-4"
-      >
-        <div
-          class="bg-white w-full rounded-md border-2 border-gray-200 mt-4 px-6 pt-4 py-4 w-full"
-        >
-          <div class="px-4 py-2">
-            <img
-              :src="'https://mumbleapi.herokuapp.com/'+$auth.user.profile.profile_pic"
-              class="h-44 m-auto rounded-full"
-            />
-            <center>
-              <p
-                class="text-2xl m-auto mt-6 justify-self-center text-gray-500 font-semibold"
-              >
-              {{$auth.user.profile.profile_pic}}
-              </p>
-            </center>
-            <p class="text-lg font-light mt-4">
-              Proffesional Web devolver! Using django and vue js.
-            </p>
-            <div class="flex items-center justify-center mt-6">
-              <div class="flex-col">
-                <p class="text-2xl text-gray-500 font-light px-2">+0</p>
-                <p class="mt-2 text-gray-500">Vote ratio</p>
-              </div>
-              <div class="flex-col ml-4">
-                <p class="text-2xl text-gray-500 font-light px-2">78</p>
-                <p class="mt-2 text-gray-500">Followers</p>
-              </div>
-            </div>
-            <center>
-              <button
-                class="bg-white border-2 mt-6 border-blue-600 py-1 px-5 rounded mr-8 text-blue-600 hover:bg-blue-600 hover:text-white transition ml-4 ease-in duration-600 text-lg font-semibold"
-              >
-                Follow
-              </button>
-            </center>
-          </div>
-        </div>
-        <topics title="Skills" class="pr-5 w-11/12" />
+        </div> -->
       </div>
     </div>
 </template>
@@ -101,18 +59,11 @@ export default {
   },
   async fetch() {
     this.posts = await this.$axios
-      .get('https://mumbleapi.herokuapp.com/api/mumbles/')
+      .get('/api/mumbles/')
       .then((res) => res.data.results)
   },
   mounted () {
-    console.log(this.$route.params.username)
-    console.log(this.$auth.user.username)
-    if (username != this.$auth.user.username){
-      console.log("Not corrent user")
-    }
-    else{
-      print("Current user")
-    }
+    console.log("Posts are :",this.posts)
   }
 }
 </script>
