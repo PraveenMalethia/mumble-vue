@@ -10,7 +10,7 @@
         >View More</router-link
       >
     </div>
-    <hr class="w-full mb-4 bg-gray-300 rounded" />
+    <hr class="w-full mb-4 bg-gray-300 dark:border dark:border-gray-700 dark:bg-gray-700 rounded" />
     <div v-for="(contributor,i) in contributors" :key="contributor.id">
       <usermini v-if="i<4"
         :user="contributor"
