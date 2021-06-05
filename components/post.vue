@@ -17,7 +17,7 @@
         </div>
       </div>
       <div>
-        <p class="text-gray-600 lg:text-lg dark:text-gray-200">{{mumble.created|moment }}</p>
+        <p class="text-gray-600 lg:text-lg dark:text-gray-200">{{mumble.created|moment }} <fa class="cursor-pointer ml-4 mr-2" icon="ellipsis-v"/></p>
       </div>
     </div>
     <div class="flex items-center px-4 py-2">
