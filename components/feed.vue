@@ -48,7 +48,7 @@ export default {
     this.loading = true
 
     this.posts = await this.$axios
-      .get('https://mumbleapi.herokuapp.com/api/mumbles/')
+      .get('/api/mumbles/')
       .then((res) => res.data.results)
       this.loading = false
     },

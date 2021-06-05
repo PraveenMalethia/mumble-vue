@@ -58,11 +58,11 @@ export default {
           this.follwing = true
         }
       }
-      console.log(this.user)
+      console.log(this.follwing)
     },
     methods:{
-      FollowBtn() {
-        this.$axios
+      async FollowBtn() {
+        await this.$axios
           .post(`/api/users/${this.user.username}/follow/`)
           .then((res) => {
             this.follwing = !this.follwing

@@ -36,11 +36,11 @@ export default {
     }
   },
   methods: {
-    FollowBtn() {
-      this.$axios
+    async FollowBtn() {
+      await this.$axios
         .post(`/api/users/${this.user.username}/follow/`)
         .then((res) => {
-          this.$nuxt.refresh()
+          this.follwing = !this.follwing
         })
         .catch((err) => {
           console.log(err)
