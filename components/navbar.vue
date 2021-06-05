@@ -25,7 +25,9 @@
               class="cursor-pointer text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6 focus:outline-none"
               @click="ShowNotifications()"
             >
-              <fa class="cursor-finger" icon="bell" />
+            <fa class="cursor-finger" icon="bell" />
+            <span class="animate-ping relative inline-flex rounded-full h-2 w-2 bg-purple-500 mb-3 ml-1">
+            </span>
             </div>
             <img
               :src="
