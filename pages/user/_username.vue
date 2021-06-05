@@ -43,9 +43,9 @@
         <topics title="Skills" class="" />
       </div>
       <div class="md:col-span-2 block md:mt-20">
-        <!-- <div v-for="post in posts" :key="post.id">
+        <div v-for="post in posts" :key="post.id">
           <post :mumble="post" />
-        </div> -->
+        </div>
       </div>
     </div>
 </template>
@@ -58,13 +58,13 @@ export default {
     }
   },
   async fetch() {
-    this.posts = await this.$axios
-      .get('/api/mumbles/')
-      .then((res) => res.data.results)
+    await this.$axios
+      .get(`/api/users/${this.$auth.user.username}/mumbles/`)
+      .then((res) => {
+        console.log(res.data.results)
+        this.posts = res.data.results
+        })
   },
-  mounted () {
-    console.log("Posts are :",this.posts)
-  }
 }
 </script>
 

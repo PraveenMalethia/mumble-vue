@@ -82,7 +82,7 @@
                   class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4"
                 >
                   <router-link
-                    to="/profile"
+                    :to="/user/+$auth.user.username"
                     class="ml-4 text-base dark:text-gray-200 text-gray-800"
                   >
                     <fa icon="user" class="mr-2"></fa> Profile
