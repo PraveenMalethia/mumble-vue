@@ -28,7 +28,7 @@
           >
             <fa icon="caret-up" class="fa-2x"/>
           </div>
-          <p class="pl-1.5 dark:text-gray-200 mr-1"> {{ positive ? '-' : '+'}}{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
+          <p class="pl-1.5 dark:text-gray-200 mr-1"> {{ positive ? '+' : '-'}}{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
           <button
             @click="UpdateVote('downvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
             class="px-1 focus:outline-none text-gray-600 dark:text-gray-200"
@@ -112,7 +112,7 @@ export default {
       upvote:false,
       downvote:false,
       show_comments: false,
-      positive:null,
+      positive:true,
     }
   },
   methods: {
