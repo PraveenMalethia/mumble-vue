@@ -28,7 +28,7 @@ export default {
   },
   async fetch() {
     this.contributors = await this.$axios
-      .get('https://mumbleapi.herokuapp.com/api/users/')
+      .get('/api/users/')
       .then((res) => res.data.results)
   },
 }
