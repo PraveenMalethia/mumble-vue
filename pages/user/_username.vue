@@ -50,29 +50,7 @@
             </div>
           </div>
           <center>
-            <button
-              class="
-                bg-white
-                border-2
-                mt-6
-                border-blue-600
-                py-1
-                px-5
-                rounded
-                mr-8
-                text-blue-600
-                hover:bg-blue-600
-                hover:text-white
-                transition
-                ml-4
-                ease-in
-                duration-600
-                text-lg
-                font-semibold
-              "
-            >
-              Follow
-            </button>
+            <button class="btn-primary">Follow</button>
           </center>
         </div>
       </div>
