@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white dark:bg-gray-800 p-3 pl-2 md:pl-7 rounded-md w-screen md:w-full border-2 border-gray-200 dark:border-transparent w-full"
+    class="bg-white dark:bg-gray-800 p-3 pl-2 md:pl-7 rounded-md md:w-full border-2 border-gray-200 dark:border-transparent w-full"
   >
     <div class="flex justify-between items-center w-full">
       <div class="flex space-x-2 md:space-x-4 items-center">
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <button :class="`btn-follow focus:outline-none ${ follwing ? 'bg-purple-500 text-white' : 'text-purple-400'}`">
+      <button @click="FollowBtn()" :class="`btn-follow focus:outline-none ${ follwing ? 'bg-purple-500 text-white' : 'text-purple-400'}`">
         <span class="md:text-lg">{{follwing ? 'Following' : 'Follow'}}</span>
       </button>
     </div>
