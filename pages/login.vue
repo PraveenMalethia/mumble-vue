@@ -3,7 +3,7 @@
     <div
       class="lg:flex w-1/2 hidden dark:bg-gray-900 bg-no-repeat bg-cover relative items-center"
     >
-      <img class="float-left" src="/images/login/login.png" />
+      <img class="float-left" src="/images/login/login.svg" />
       <div
         class="bottom-0 absolute p-4 text-center right-0 left-0 flex justify-center space-x-4"
       >
@@ -13,9 +13,9 @@
       class="lg:w-1/2 w-full dark:bg-gray-900 flex items-center justify-center text-center md:px-16 px-0 z-0"
     >
       <div
-        class="absolute lg:hidden z-10 inset-0 dark:bg-gray-500 bg-no-repeat bg-cover items-center"
+        class="absolute lg:hidden z-10 inset-0 bg-no-repeat bg-cover items-center"
       >
-        <div class="absolute dark:bg-black opacity-60 inset-0 z-0"></div>
+        <div class="absolute dark:bg-gray-900 opacity-60 inset-0 z-0"></div>
       </div>
       <div class="w-full py-6 z-20">
         <div class="w-full">
@@ -57,12 +57,6 @@
             <a href="#">Forgot your password?</a>
           </div>
           <div class="px-4 pb-2 pt-4">
-            <button type="button" class="bg-rose-600" disabled>
-              <svg class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
-                <!-- ... -->
-              </svg>
-              Processing
-            </button>
             <button @click="login()" class="btn-primary block w-full">
               sign in
             </button>
