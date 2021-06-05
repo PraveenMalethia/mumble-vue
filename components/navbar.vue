@@ -15,6 +15,8 @@
         <input
           class="transition duration-200 ease-in-out border shadow-lg border-transparent rounded-full py-2 px-4 dark:bg-gray-700 bg-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent h-8 md:h-11 w-36 md:w-56 dark:placeholder-gray-300 placeholder-gray-800"
           placeholder="Search"
+          v-on:keyup.191="inpFocus"
+          id="search"
         />
 
         <div>
@@ -120,6 +122,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+Vue.config.keyCodes.slash = 191
 export default {
   name: 'NavBar',
   // async fetch(){
@@ -155,6 +159,9 @@ export default {
     async Logout() {
       await this.$auth.logout()
     },
+    inpFocus(){
+      document.getElementById("search").focus();
+    }
   },
 }
 </script>

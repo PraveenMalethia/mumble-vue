@@ -55,7 +55,9 @@ export default {
     Mumble(){
       if (this.content.length > 0){
         this.$axios.post('/api/mumbles/create/',{content:this.content})
-      .then((res) => this.$nuxt.refresh())
+      .then((res) => {
+        this.posts.splice(0,0,res.data)
+        })
       this.content = null
       }
       else{
