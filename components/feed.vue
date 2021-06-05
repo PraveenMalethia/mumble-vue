@@ -20,6 +20,11 @@
       <post :mumble="post"  v-if="!loading" v-linkified:options="{className:'text-blue-500'}" />
       </client-only>
     </div>
+    <div>
+      <button class="btn-primary" v-if="more" @click="LoadMore">
+        Load More
+      </button>
+    </div>
 
     <div v-if="loading">
         <postloading />
@@ -36,7 +41,9 @@ export default {
       posts: [],
       content:'',
       error:false,
-      loading:true
+      loading:true,
+      next:'',
+      more:false,
     }
   },
   mounted(){
@@ -47,10 +54,16 @@ export default {
     this.error = false
     this.loading = true
 
-    this.posts = await this.$axios
+    await this.$axios
       .get('/api/mumbles/')
-      .then((res) => res.data.results)
-      this.loading = false
+      .then((res) => {
+        this.posts = res.data.results
+        this.next= res.data.next
+        if (res.data.next){
+          this.more = true
+        }
+        })
+        this.loading = false
     },
     Mumble(){
       if (this.content.length > 0){
@@ -66,6 +79,20 @@ export default {
           this.error = false;
         }, 2000)
       }
+    },
+    LoadMore(){
+      this.$axios.get(this.next)
+      .then((res) =>{
+        for(let i=0;i<res.data.results.length;i++){
+          this.posts.push(res.data.results[i])
+        }
+        if (res.data.next != null){
+          this.next = res.data.next
+        }
+        else{
+          this.more = false
+        }
+      })
     }
   }
 }
