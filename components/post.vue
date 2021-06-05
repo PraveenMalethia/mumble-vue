@@ -14,7 +14,7 @@
         </div>
       </div>
       <div>
-        <p class="text-gray-600 lg:text-lg dark:text-gray-200">10 days ago</p>
+        <p class="text-gray-600 lg:text-lg dark:text-gray-200">{{mumble.created|moment }}</p>
       </div>
     </div>
     <div class="flex items-center px-4 py-2">
@@ -42,14 +42,12 @@
           </button>
       </div>
       <div class="ml-6">
-        <p>
           <div class="text-gray-600 dark:text-gray-200" v-if="mumble.original_mumble == null">
             {{mumble.content}}
           </div>
           <div class="text-gray-600 dark:text-gray-200" v-else>
             {{mumble.original_mumble.content}}
           </div>
-        </p>
       </div>
     </div>
     <hr class="mt-4 mb-4 bg-gray-300 dark:border dark:border-gray-700 dark:bg-gray-700" />
@@ -77,6 +75,11 @@
 </template>
 
 <script>
+import Vue from 'vue'
+Vue.use(require('vue-moment'));
+import moment from 'moment'
+
+Vue.prototype.moment = moment
 export default {
   props: {
     mumble: {
@@ -89,6 +92,8 @@ export default {
       loading: true,
       comment: '',
       show: false,
+      upvote:false,
+      downvote:false,
       show_comments: false,
     }
   },
@@ -96,10 +101,22 @@ export default {
     UpdateVote(vote, id) {
       this.$axios
         .post('/api/mumbles/vote/', { post_id: id, value: vote })
-        .then(() => {
+        .then((response) => {
+          console.log(response)
           this.$nuxt.refresh()
         })
     },
+    moment: function (date) {
+      return moment(date);
+    },
+    date: function (date) {
+      return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+    }
   },
+  filters: {
+    moment: function (date) {
+      return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+    }
+  }
 }
 </script>

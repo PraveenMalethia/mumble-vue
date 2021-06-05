@@ -17,10 +17,10 @@
               >
                 {{ $auth.user.username }}
               </p>
-            </center>
-            <p class="text-lg font-light mt-4">
+            <p class="text-lg font-light mt-4 m-auto justify-self-center">
               {{ $auth.user.profile.bio }}
             </p>
+            </center>
             <div class="flex items-center justify-center mt-6">
               <div class="flex-col">
                 <p class="text-2xl  font-light px-2">+0</p>
@@ -60,10 +60,7 @@ export default {
   async fetch() {
     await this.$axios
       .get(`/api/users/${this.$auth.user.username}/mumbles/`)
-      .then((res) => {
-        console.log(res.data.results)
-        this.posts = res.data.results
-        })
+      .then((res) => this.posts = res.data)
   },
 }
 </script>

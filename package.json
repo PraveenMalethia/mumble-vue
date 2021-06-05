@@ -19,7 +19,8 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
-    "vue-linkify": "^1.0.1"
+    "vue-linkify": "^1.0.1",
+    "vue-moment": "^4.1.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.9",
