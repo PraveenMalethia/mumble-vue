@@ -1,7 +1,10 @@
 <template>
  <div
     class="bg-white dark:bg-gray-800 w-full md:w-11/12 rounded-md border-2 border-gray-200 dark:border-transparent mt-6 py-6 px-4"
-  >
+  >    
+    <p class=" text-sm text-gray-600 dark:text-gray-300 mb-2 ml-3">
+      <fa icon="paper-plane" class="mr-1"></fa>  <span class="italic">someone</span> remumbled
+    </p>
     <div class="flex justify-between items-center">
       <div class="flex">
         <img
