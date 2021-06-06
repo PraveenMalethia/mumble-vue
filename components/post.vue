@@ -69,7 +69,7 @@
       <div class="justify-self-start -ml-2 md:-ml-0">
         <fa class="cursor-pointer dark:text-gray-200 ml-5 hover:text-purple-500 transition ease-in-out duration-300" icon="comments"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.comment_count : mumble.comment_count}}</span>
       </div>
-      <div  class="justify-self-center md:justify-self-center">
+      <div  class="justify-self-center md:justify-self-start">
         <fa class="cursor-pointer dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
       </div>
       <div class="justify-self-end">
