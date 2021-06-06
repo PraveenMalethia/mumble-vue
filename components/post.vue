@@ -16,12 +16,14 @@
           <p class="font-light dark:text-gray-200 cursor-pointer">@{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
         </div>
       </div>
-      <div>
-        <p class="text-gray-600 lg:text-lg dark:text-gray-200">{{mumble.created|moment }} <fa class="cursor-pointer ml-4 mr-2" icon="ellipsis-v"/></p>
+      <div">
+        <p class="text-gray-600 lg:text-lg dark:text-gray-200">{{mumble.created|moment }} 
+          <fa class="cursor-pointer ml-4 mr-2" icon="ellipsis-v"/>
+        </p>
       </div>
     </div>
     <div class="flex items-center px-4 py-2">
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-col">
         <div
             @click="UpdateVote('upvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
             class="cursor-pointer px-1 focus:outline-none text-gray-600 dark:text-gray-200"
@@ -31,7 +33,18 @@
           >
             <fa icon="caret-up" class="fa-2x"/>
           </div>
-          <p class="pl-1.5 dark:text-gray-200 mr-1"> {{ positive ? '+' : '-'}}{{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</p>
+          <span class="pl-1.5 dark:text-gray-200 mr-1 flex items-center justify-center">
+            <span v-if="mumble.original_mumble">
+              <span v-if="mumble.original_mumble.vote_rank > 0">
+                +
+              </span>
+            </span>
+            <span v-else>
+              <span v-if="mumble.vote_rank > 0">
+                +
+              </span>
+            </span>
+            {{mumble.original_mumble ? mumble.original_mumble.vote_rank : mumble.vote_rank}}</span>
           <button
             @click="UpdateVote('downvote',mumble.original_mumble ? mumble.original_mumble.id : mumble.id)"
             class="px-1 focus:outline-none text-gray-600 dark:text-gray-200"
@@ -52,14 +65,14 @@
       </div>
     </div>
     <hr class="mt-4 mb-4 bg-gray-300 dark:border dark:border-gray-700 dark:bg-gray-700" />
-    <div class="ml-5  grid grid-cols-3">
-      <div>
+    <div class="ml-5 grid grid-cols-3">
+      <div class="justify-self-start -ml-2 md:-ml-0">
         <fa class="cursor-pointer dark:text-gray-200 ml-5 hover:text-purple-500 transition ease-in-out duration-300" icon="comments"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.comment_count : mumble.comment_count}}</span>
       </div>
-      <div>
+      <div  class="justify-self-center md:justify-self-center">
         <fa class="cursor-pointer dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
       </div>
-      <div>
+      <div class="justify-self-end">
       <fa @click="show = !show" class="cursor-pointer dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
       </div>
     </div>
@@ -79,7 +92,6 @@
 import Vue from 'vue'
 Vue.use(require('vue-moment'));
 import moment from 'moment'
-
 Vue.prototype.moment = moment
 export default {
   props: {
