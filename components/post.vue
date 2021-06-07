@@ -27,7 +27,7 @@
         <div>
           <p class="text-gray-600 lg:text-lg dark:text-gray-200">
             {{ mumble.created | moment }}
-            <button @click="show_options = !show_options" class="focus:outline-none">
+            <button @click="options = !options" class="focus:outline-none">
             <fa class="cursor-pointer ml-4 mr-2" icon="ellipsis-v" />
             </button>
           </p>
@@ -156,10 +156,10 @@
           <fa class="cursor-pointer dark:text-gray-200 ml-5 hover:text-purple-500 transition ease-in-out duration-300" icon="comments"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.comment_count : mumble.comment_count}}</span>
         </div>
         <div class="justify-self-center md:justify-self-start">
-          <fa class="cursor-pointer dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
+          <fa @click="show = !show" class="cursor-pointer dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
         </div>
         <div class="justify-self-end">
-          <fa @click="show = !show" class="cursor-pointer dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
+          <fa class="cursor-pointer dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
         </div>
       </div>
       <div v-if="show" class="ml-5  grid grid-cols-1">
@@ -226,7 +226,7 @@ export default {
       follwing:false,
       show_comments: false,
       positive: true,
-      options:true
+      options:false
     }
   },
   methods: {

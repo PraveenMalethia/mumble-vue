@@ -55,7 +55,7 @@
         <post
           :mumble="post"
           v-if="!loading"
-          v-linkified:options="{ className: 'text-blue-500' }"
+          
         />
       </client-only>
     </div>
