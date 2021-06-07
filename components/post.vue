@@ -50,7 +50,8 @@
       <div>
         <p class="text-gray-600 lg:text-lg dark:text-gray-200">
           {{ mumble.created | moment }}
-          <button @click="options = !options" class="focus:outline-none">
+          <button @click="options = !options"   @focusout="options = false"
+          tabindex="0" class="focus:outline-none">
             <fa class="cursor-pointer ml-4 mr-2" icon="ellipsis-v" />
           </button>
         </p>
@@ -252,14 +253,14 @@
         >
           <fa icon="caret-up" class="fa-2x" />
         </div>
-        <p class="pl-1.5 dark:text-gray-200 mr-1">
+        <!-- <p class="pl-1.5 dark:text-gray-200 mr-1">
           {{ positive ? '+' : '-'
           }}{{
             mumble.original_mumble
               ? mumble.original_mumble.vote_rank
               : mumble.vote_rank
           }}
-        </p>
+        </p> -->
         <span
           class="
             pl-1.5
@@ -290,10 +291,6 @@
             )
           "
           class="px-1 focus:outline-none text-gray-600 dark:text-gray-200"
-          @@
-          -41,45
-          +137,47
-          @@
         >
           <fa icon="caret-down" class="fa-2x" />
         </button>
@@ -411,7 +408,6 @@
 import Vue from 'vue'
 Vue.use(require('vue-moment'))
 import moment from 'moment'
-
 Vue.prototype.moment = moment
 export default {
   props: {
@@ -430,6 +426,8 @@ export default {
       show_comments: false,
       positive: true,
       username: '',
+      options: false,
+      follwing:false
     }
   },
   mounted() {
@@ -446,6 +444,20 @@ export default {
         this.username = this.mumble.user.username
       } else {
         this.positive = false
+      }
+    }
+
+    if(this.mumble.original_mumble){
+      for (var i = 0; i < this.mumble.original_mumble.user.followers.length; i++){
+        if (this.$auth.user.id == this.mumble.original_mumble.user.followers[i]){
+          this.follwing = true
+        }
+      }
+    } else{
+      for (var i = 0; i < this.mumble.user.followers.length; i++){
+        if (this.$auth.user.id == this.mumble.user.followers[i]){
+          this.follwing = true
+        }
       }
     }
   },
