@@ -17,7 +17,7 @@
           />
           <div class="ml-4">
             <p class="font-bold lg:text-lg dark:text-gray-200 cursor-pointer">
-             {{ mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username }}
+              {{ mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username }}
             </p>
             <p class="font-light dark:text-gray-200 cursor-pointer">
               @{{ mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username }}
@@ -27,7 +27,9 @@
         <div>
           <p class="text-gray-600 lg:text-lg dark:text-gray-200">
             {{ mumble.created | moment }}
+            <button @click="show_options = !show_options" class="focus:outline-none">
             <fa class="cursor-pointer ml-4 mr-2" icon="ellipsis-v" />
+            </button>
           </p>
         </div>
       </div>
@@ -38,7 +40,7 @@
             class="right-4 -top-6 absolute shadow-xl cursor-pointer dark:bg-gray-900 rounded-md lg:w-64 md:w-48 w-36 mt-4"
           >
 
-            <div v-if="mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username == $auth.user.username">
+            <div v-if="mumble.user.username == $auth.user.username">
               <div
                 class="hover:bg-gray-300 bg-gray-200 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
               >
