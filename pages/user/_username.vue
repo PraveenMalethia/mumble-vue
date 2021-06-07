@@ -28,15 +28,15 @@
       >
         <div class="px-4 py-2">
           <img
-            :src="$auth.user.profile.profile_pic"
+            :src="user.profile_pic"
             class="h-44 m-auto rounded-full"
           />
           <center>
             <p class="text-2xl m-auto mt-6 justify-self-center font-semibold">
-              {{ $auth.user.username }}
+              {{ user.username }}
             </p>
             <p class="text-lg font-light mt-4 m-auto justify-self-center">
-              {{ $auth.user.profile.bio }}
+              {{ user.bio }}
             </p>
           </center>
           <div class="flex items-center justify-center mt-6">
@@ -45,7 +45,7 @@
               <p class="mt-2 0">Vote ratio</p>
             </div>
             <div class="flex-col ml-4">
-              <p class="text-2xl font-light px-2">78</p>
+              <p class="text-2xl font-light px-2">{{user.followers.length}}</p>
               <p class="mt-2">Followers</p>
             </div>
           </div>
@@ -54,7 +54,7 @@
           </center>
         </div>
       </div>
-      <topics title="Skills"/>
+      <topics title="Skills" />
     </div>
     <div class="md:col-span-2 block">
       <div v-for="post in posts" :key="post.id">
@@ -77,16 +77,26 @@ export default {
     return {
       posts: [],
       loading: false,
+      user: null,
     }
   },
   async fetch() {
-    this.loading = true
-    await this.$axios
-      .get(`/api/users/${this.$auth.user.username}/mumbles/`)
-      .then((res) => {
-        this.posts = res.data
+    if (this.$route.params.username == this.$auth.user.username) {
+      this.user = this.$auth.user.profile
+    } else {
+      this.loading = true
+      await this.$axios
+        .get(`/api/users/${this.$route.params.username}/mumbles/`)
+        .then((res) => {
+          this.posts = res.data
+        })
+      await this.$axios
+        .get(`/api/users/${this.$route.params.username}/`)
+        .then((res) => {
+          this.user = res.data.profile
+        })
         this.loading = false
-  })
+    }
   },
 }
 </script>

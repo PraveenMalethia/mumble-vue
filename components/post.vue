@@ -12,8 +12,8 @@
           class="h-10 md:h-12 lg:h-14 rounded-full"
         />
         <div class="ml-4">
-          <p class="font-bold lg:text-lg dark:text-gray-200 cursor-pointer">{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
-          <p class="font-light dark:text-gray-200 cursor-pointer">@{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</p>
+          <p class="font-bold lg:text-lg dark:text-gray-200 cursor-pointer"><router-link :to="'/user/'+username">{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</router-link></p>
+          <p class="font-light dark:text-gray-200 cursor-pointer"><router-link :to="'/user/'">@{{mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username}}</router-link></p>
         </div>
       </div>
       <div>
@@ -57,15 +57,15 @@
         <fa class="cursor-pointer dark:text-gray-200 ml-5 hover:text-purple-500 transition ease-in-out duration-300" icon="comments"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.comment_count : mumble.comment_count}}</span>
       </div>
       <div>
-        <fa class="cursor-pointer dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
+        <fa @click="show = !show" class="cursor-pointer dark:text-gray-200 xs:ml-10 sm:ml-20 md:ml-10 lg:ml-16 xl:ml-24 hover:text-purple-500 transition ease-in-out duration-300" icon="comment"/>
       </div>
       <div>
-      <fa @click="show = !show" class="cursor-pointer dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
+      <fa class="cursor-pointer dark:text-gray-200 xs:ml-20 sm:ml-32 md:ml-24 lg:ml-20 xl:ml-36 hover:text-purple-500 transition ease-in-out duration-300" icon="paper-plane"/><span class="ml-2 dark:text-gray-100">{{mumble.original_mumble ? mumble.original_mumble.share_count : mumble.share_count}}</span>
       </div>
     </div>
     <div v-if="show" class="ml-5  grid grid-cols-1">
       <textarea
-        placeholder="Share your brilliant thought"
+        placeholder="Share your comments on this . . ."
         v-model="comment"
         class="p-4 mt-4 bg-gray-100 dark:bg-gray-800 h-24 rounded-lg width-me border-2 border-gray-200 dark:text-gray-100 focus:border-2 focus:outline-none focus:border-blue-300"
       >
@@ -88,25 +88,6 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log(this.mumble)
-    if (this.mumble.original_mumble != null){
-      if(this.mumble.original_mumble.vote_rank > 0){
-        this.positive = true
-      }
-      else{
-        this.positive = false
-      }
-    }
-    else{
-      if(this.mumble.vote_rank > 0){
-        this.positive = true
-      }
-      else{
-        this.positive = false
-      }
-    }
-  },
   data: () => {
     return {
       loading: true,
@@ -116,6 +97,27 @@ export default {
       downvote:false,
       show_comments: false,
       positive:true,
+      username: '',
+    }
+  },
+  mounted() {
+    if (this.mumble.original_mumble != null){
+      if(this.mumble.original_mumble.vote_rank > 0){
+        this.positive = true
+        this.username = this.mumble.original_mumble.user.username
+      }
+      else{
+        this.positive = false
+      }
+    }
+    else{
+      if(this.mumble.vote_rank > 0){
+        this.positive = true
+        this.username = this.mumble.user.username
+      }
+      else{
+        this.positive = false
+      }
     }
   },
   methods: {
