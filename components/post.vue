@@ -37,12 +37,12 @@
       <div v-if="options" class="relative w-full h-full z-20">
         <div>
           <div
-            class="right-4 -top-6 absolute shadow-xl cursor-pointer dark:bg-gray-900 rounded-md lg:w-64 md:w-48 w-36 mt-4"
+            class="right-4 -top-6 absolute shadow-xl cursor-pointer bg-gray-200 dark:bg-gray-900 rounded-md lg:w-64 md:w-48 w-36 mt-4"
           >
 
             <div v-if="mumble.user.username == $auth.user.username">
               <div
-                class="hover:bg-gray-300 bg-gray-200 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
               >
                 <p
                   class="ml-4 text-xs md:text-sm truncate dark:text-gray-200 text-gray-800"
@@ -52,7 +52,7 @@
               </div>
 
               <div
-                class="hover:bg-gray-300 bg-gray-200 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
               >
                 <p
                   class="ml-4 text-xs md:text-sm truncate dark:text-gray-200 text-gray-800"
@@ -65,7 +65,7 @@
             <div v-else>
 
               <div
-                class="hover:bg-gray-300 bg-gray-200 dark:hover:bg-gray-700 rounded-md flex break-none py-2 md:py-4"
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md flex break-none py-2 md:py-4"
               >
                 <div class="ml-4 w-full md:w-full text-xs md:text-sm dark:text-gray-200 text-gray-800 overflow-hidden">
                   <span v-if="follwing" class="flex">
@@ -82,7 +82,7 @@
               </div>
 
               <div
-                class="hover:bg-gray-300 bg-gray-200 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
               >
                 <p
                   class="ml-4 text-xs md:text-sm truncate dark:text-gray-200 text-gray-800"
@@ -92,7 +92,7 @@
               </div>
 
               <div
-                class="hover:bg-gray-300 bg-gray-200 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
               >
                 <p
                   class="ml-4 text-xs md:text-sm dark:text-gray-200 text-gray-800"
