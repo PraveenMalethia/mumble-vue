@@ -57,7 +57,7 @@
                 <p
                   class="ml-4 text-xs md:text-sm truncate dark:text-gray-200 text-gray-800"
                 >
-                  <fa icon="edit" class="mr-2"></fa> Delete
+                  <fa icon="trash" class="mr-2"></fa> Delete
                 </p>
               </div>
             </div>
