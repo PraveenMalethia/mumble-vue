@@ -35,43 +35,72 @@
       <div v-if="options" class="relative w-full h-full z-20">
         <div>
           <div
-            class="right-4 -top-6 absolute shadow-xl cursor-pointer dark:bg-gray-900 rounded-md lg:w-64 md:w-48 mt-4"
+            class="right-4 -top-6 absolute shadow-xl cursor-pointer dark:bg-gray-900 rounded-md lg:w-64 md:w-48 w-36 mt-4"
           >
-            <div
-              class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md flex break-none px-2 py-4"
 
-            >
-              <div class="ml-4 text-xs md:text-sm dark:text-gray-200 text-gray-800 overflow-hidden">
-                <span v-if="follwing">
-                  <fa icon="user-times" class="mr-2"></fa>
-                  Unfollow  {{ mumble.original_mumble ? mumble.original_mumble.user.username  : mumble.user.username}}
-                </span>
-                <span v-else>
-                  <fa icon="user-plus" class="mr-2"></fa>
-                  Follow  {{ mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username }}
-                </span>
+            <div v-if="mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username == $auth.user.username">
+              <div
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
+              >
+                <p
+                  class="ml-4 text-xs md:text-sm truncate dark:text-gray-200 text-gray-800"
+                >
+                  <fa icon="edit" class="mr-2"></fa> Edit
+                </p>
+              </div>
+
+              <div
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
+              >
+                <p
+                  class="ml-4 text-xs md:text-sm truncate dark:text-gray-200 text-gray-800"
+                >
+                  <fa icon="edit" class="mr-2"></fa> Delete
+                </p>
               </div>
             </div>
 
-            <div
-              class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4"
-            >
-              <p
-                class="ml-4 text-xs md:text-sm dark:text-gray-200 text-gray-800"
+            <div v-else>
+
+              <div
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md flex break-none py-2 md:py-4"
               >
-                <fa icon="ban" class="mr-2"></fa> Block {{ mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username }}
-              </p>
+                <div class="ml-4 w-full md:w-full text-xs md:text-sm dark:text-gray-200 text-gray-800 overflow-hidden">
+                  <span v-if="follwing" class="flex">
+                    <fa icon="user-times" class="mr-2"></fa>
+                    <span class="w-full truncate">
+                      Unfollow  {{ mumble.original_mumble ? mumble.original_mumble.user.username  : mumble.user.username}}
+                    </span>
+                  </span>
+                  <span v-else>
+                    <fa icon="user-plus" class="mr-2"></fa>
+                    Follow  {{ mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username }}
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
+              >
+                <p
+                  class="ml-4 text-xs md:text-sm truncate dark:text-gray-200 text-gray-800"
+                >
+                  <fa icon="ban" class="mr-2"></fa> Block {{ mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username }}
+                </p>
+              </div>
+
+              <div
+                class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full py-2 md:py-4"
+              >
+                <p
+                  class="ml-4 text-xs md:text-sm dark:text-gray-200 text-gray-800"
+                >
+                  <fa icon="minus-circle" class="mr-2"></fa> Hide
+                </p>
+              </div>
+
             </div>
 
-            <div
-              class="hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md w-full px-2 py-4"
-            >
-              <p
-                class="ml-4 text-xs md:text-sm dark:text-gray-200 text-gray-800"
-              >
-                <fa icon="minus-circle" class="mr-2"></fa> Hide
-              </p>
-            </div>
           </div>
         </div>
       </div>
