@@ -3,12 +3,14 @@
     <div
       class="flex bg-gray-600 dark:bg-gray-900 py-2 px-3 md:justify-between md:py-3 md:px-7 items-center"
     >
-      <div>
-        <h2
-          class="text-md md:text-xl text-gray-400 md:tracking-wide uppercase font-bold px-8 md:px-24"
+      <div class="px-9 w-2/6 flex items-center flex-none md:px-24">
+        <!-- <h2
+          class="text-base md:text-xl text-gray-400 md:tracking-wide uppercase font-bold px-8 md:px-24"
         >
           Mumble
-        </h2>
+        </h2> -->
+
+        <img src="/icon.png" alt="Mumble-Logo" class="h-7 w-7 md:h-10 md:w-10">
       </div>
 
       <div class="flex items-center">
@@ -19,7 +21,7 @@
           id="search"
         />
 
-        <div>
+        <div class="w-4/6">
           <div class="flex items-center">
             <div
               class="cursor-pointer text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6 focus:outline-none"
