@@ -476,8 +476,7 @@ export default {
       this.$axios
         .post('/api/mumbles/vote/', { post_id: id, value: vote })
         .then((response) => {
-          console.log(response.data)
-          this.$nuxt.refresh()
+          this.mumble = response.data
         })
         .catch((error) => {
           console.log(error)
