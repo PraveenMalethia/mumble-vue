@@ -407,7 +407,7 @@
         "
       >
       </textarea>
-      <button class="btn-primary" @click="Mumble">
+      <button class="btn-primary" @click="Comment()">
         <fa class="mr-2" icon="comment" />Comment
       </button>
     </div>
@@ -482,6 +482,15 @@ export default {
           console.log(error)
         })
     },
+    Comment(){
+      this.$axios.post('/api/mumbles/create/',{postId:this.mumble.id,isComment:true,content:this.comment})
+      .then((response)=>{
+        this.mumble = response.data
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    },
     moment: function (date) {
       return moment(date)
     },
@@ -489,6 +498,8 @@ export default {
       return moment(date).format('MMMM Do YYYY, h:mm:ss a')
     },
   },
+  computed:{},
+
   filters: {
     moment: function (date) {
       return moment(date).format('MMMM Do YYYY, h:mm:ss a')
