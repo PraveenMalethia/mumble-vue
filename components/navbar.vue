@@ -36,7 +36,7 @@
             <img
               :src="
                 this.$auth.user.profile.profile_pic
-                  ? 'https://mumbleapi.herokuapp.com/static'+this.$auth.user.profile.profile_pic
+                  ? this.$auth.user.profile.profile_pic
                   : 'https://mumbleapi.herokuapp.com/static/images/default.png'
               "
               @click="showProfileItems()"

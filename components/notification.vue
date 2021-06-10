@@ -3,7 +3,7 @@
     <span v-if="notification.notification_type == 'mumble' " class="flex break-words hover:bg-gray-300 dark:hover:bg-gray-700
       rounded-md w-full px-2 py-2">
       <img
-        :src="`https://mumbleapi.herokuapp.com/static${notification.created_by.profile_pic}`"
+        :src="notification.created_by.profile_pic"
         style="border-radius: 50%"
         class="h-10"
         alt="User Profile"

@@ -23,12 +23,12 @@
     <div class="flex justify-between items-center">
       <div class="flex w-3/6">
         <span v-if="mumble.original_mumble
-          ? 'https://mumbleapi.herokuapp.com/static'+mumble.original_mumble.user.profile_pic
+          ? mumble.original_mumble.user.profile_pic
           : mumble.user.profile_pic">
           <img
             :src="
               mumble.original_mumble
-                ? 'https://mumbleapi.herokuapp.com/static' +mumble.original_mumble.user.profile_pic
+                ? mumble.original_mumble.user.profile_pic
                 : mumble.user.profile_pic
             "
             class="h-10 md:h-12 lg:h-14 rounded-full"
