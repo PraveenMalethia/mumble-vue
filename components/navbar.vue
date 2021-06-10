@@ -51,7 +51,7 @@
           <div class="abolute">
             <div
               v-if="show_items"
-              class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
+              class="absolute h-64 overflow-y-scroll transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
             >
               <div v-for="noti in notifications" :key="noti.id">
                 <Notification :notification="noti" />
