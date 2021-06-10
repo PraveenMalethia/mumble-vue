@@ -26,6 +26,8 @@
             <div
               class="cursor-pointer text-white ml-5 uppercase md:text-lg md:tracking-medium md:mr-6 focus:outline-none"
               @click="ShowNotifications()"
+              @focusout="show_items = false" 
+              tabindex="1"
             >
             <fa class="cursor-finger" icon="bell" />
             <span class="animate-ping relative inline-flex rounded-full h-2 w-2 bg-purple-500 mb-3 ml-1">
@@ -49,7 +51,7 @@
           <div class="abolute">
             <div
               v-if="show_items"
-              class="absolute transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
+              class="absolute h-64 overflow-y-scroll transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
             >
               <div v-for="noti in notifications" :key="noti.id">
                 <Notification :notification="noti" />
@@ -124,26 +126,26 @@
     </div>
   </div>
 </template>
-
 <script>
 import Vue from 'vue'
 Vue.config.keyCodes.slash = 191
 export default {
   name: 'NavBar',
-  // async fetch(){
-  //   await this.$axios.get('/api/notifications/')
-  //   .then((response) =>{
-  //     console.log(response.data)
-  //   })
-  //   .catch((error)=>{
-  //     console.log(error)
-  //   })
-  // },
+  async fetch(){
+    await this.$axios.get('/api/notifications/')
+    .then((response) =>{
+      console.log(response.data)
+      this.notifications = response.data.filter(noti => noti.is_read == false)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  },
   data() {
     return {
       show_items: false,
       show_profile_items: false,
-      notifications: [{ id: 1, data: 'This is a Dynamic Notification' }],
+      notifications: [],
     }
   },
   methods: {
@@ -170,4 +172,13 @@ export default {
 }
 </script>
 
-
+<style>
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #c4d0d3;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #5aa5b9;
+    border-radius: 5px;
+}
+</style>
