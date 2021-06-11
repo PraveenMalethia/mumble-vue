@@ -1,6 +1,6 @@
 <template>
   <div class="px-4 ml-24 mt-0 fixed block overflow-y-auto lg:overflow-visible">
-    <div v-for="tab in tabs" :key="tab.id">
+    <div v-for="tab in tabs" :key="tab.id" @click="emitClose()">
       <router-link :to="tab.to">
 
       <a
@@ -38,6 +38,9 @@ export default {
     current: 0,
   },
   methods: {
+   emitClose(){
+      this.$emit('closeSideBar')
+    }
   },
 }
 </script>
