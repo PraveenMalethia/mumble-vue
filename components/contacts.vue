@@ -81,7 +81,6 @@ export default {
     }
   },
   mounted() {
-    this.currentName = this.contacts[0].username
   },
   methods: {
     changeCurrent(username) {
