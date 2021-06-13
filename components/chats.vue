@@ -25,21 +25,7 @@
       <div class="bg-gray-200 dark:bg-gray-900 pt-8 h-screen">
         <div class="flex-col-reverse space-y-4 height-me overflow-y-auto px-4">
           <message author="true" />
-          <message />
-          <message author="true" />
-          <message author="true" />
-          <message author="true" />
-          <message />
-          <message />
-          <message />
-          <message author="true" />
-          <message author="true" />
-          <message author="true" />
-          <message author="true" />
-          <message author="true" />
-          <message />
-          <message />
-          <message />
+          <message/>
         </div>
 
         <div class="flex w-full space-x-2 p-2 items-center">
@@ -58,7 +44,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    chats:{
+      type: Object,
+      required: true
+    }
+  }
+}
 </script>
 
 <style scoped>

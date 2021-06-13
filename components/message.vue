@@ -4,7 +4,7 @@
     :class="{ 'flex-row-reverse pl-28 pr-0': 'true' == author }"
   >
     <img
-      src="https://us-east-1.linodeobjects.com/mumble/a14f6cc2-5736-18fd-402c-505b197b8f9c.jpeg?AWSAccessKeyId=0GX0K8X1O9RE83ACTB4G&Signature=Mo%2Bxm89zlyfJbaOePTTCOVarx80%3D&Expires=1622460807"
+      src="https://us-east-1.linodeobjects.com/mumble/19f7ee39-77c4-ab0d-5bf1-031b417f3da3.png?AWSAccessKeyId=0GX0K8X1O9RE83ACTB4G&Signature=LxKFoqXgOoJXH8RqrOx4z2vKVD4%3D&Expires=1623588942"
       class="rounded-full h-10 mx-3"
     />
     <div
@@ -15,7 +15,7 @@
         'bg-blue-200 dark:bg-indigo-600': 'true' != author,
       }"
     >
-      sssssssssssssssssssssssssssssssssssss
+      This is a message
     </div>
   </div>
 </template>
