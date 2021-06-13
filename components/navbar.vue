@@ -134,7 +134,6 @@ export default {
   async fetch(){
     await this.$axios.get('/api/notifications/')
     .then((response) =>{
-      console.log(response.data)
       this.notifications = response.data.filter(noti => noti.is_read == false)
     })
     .catch((error)=>{
