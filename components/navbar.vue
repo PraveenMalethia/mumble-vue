@@ -43,11 +43,6 @@
               class="h-10 mr-4 ml-4 md:mr-12 lg:mr-16 rounded-full cursor-pointer"
             />
           </div>
-
-          <!-- <p class="text-white uppercase md:text-lg md:tracking-medium ml-4 md:mr-6" @click="show_items = !show_items">Bell</p>
-
-                <img src="https://mumbleapi.herokuapp.com/static/images/default.png" class="h-10 mr-4 md:mr-12 lg:mr-16"> -->
-
           <div class="abolute">
             <div
               v-if="show_items"

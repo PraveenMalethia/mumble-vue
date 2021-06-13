@@ -83,6 +83,7 @@ export default {
   async fetch() {
     if (this.$route.params.username == this.$auth.user.username) {
       this.user = this.$auth.user.profile
+      console.log(this.user)
     } else {
       this.loading = true
       await this.$axios

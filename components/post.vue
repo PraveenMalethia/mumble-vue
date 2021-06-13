@@ -39,6 +39,7 @@
           class="h-10 md:h-12 lg:h-14 rounded-full"
         /> -->
         <div class="ml-4 w-3/6">
+        <router-link :to="'/user/'+username">
           <p class="font-bold truncate text-sm md:text-lg dark:text-gray-200 cursor-pointer">
             {{
               mumble.original_mumble
@@ -53,6 +54,7 @@
                 : mumble.user.username
             }}
           </p>
+        </router-link>
         </div>
       </div>
       <div class="w-3/6">
