@@ -37,7 +37,7 @@
         class="bg-gray-200 pt-6 dark:bg-gray-900 w-screen h-screen sm:w-screen block lg:hidden fixed z-40 top-12 left-0 md:h-screen md:top-16"
       >
         <div class="margin-me-small md:margin-me">
-          <sidenavbar current="home" />
+          <sidenavbar current="home" v-on:closeSideBar="showSideNav" />
         </div>
       </div>
     </transition>
