@@ -46,10 +46,17 @@
           <div class="abolute">
             <div
               v-if="show_items"
-              class="absolute h-64 overflow-y-scroll transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
+              class="absolute max-h-64 overflow-y-scroll transition ease-in-out duration-1000 shadow-xl right-6 cursor-pointer dark:bg-gray-800 bg-white rounded-md py-3 w-72 mt-4"
             >
-              <div v-for="noti in notifications" :key="noti.id">
-                <Notification :notification="noti" />
+              <div v-if="notifications.length">
+                <div v-for="noti in notifications" :key="noti.id">
+                  <Notification :notification="noti" />
+                </div>
+              </div>
+              <div v-else>
+                <div class="rounded-md w-full px-2 py-2">
+                  <p class="ml-4 text-base font-medium text-gray-600 dark:text-gray-400">No Notifications to show</p>
+                </div>
               </div>
             </div>
           </div>
