@@ -10,7 +10,7 @@
       />
 
       <p class="ml-4 text-base font-medium text-blue-500">
-        A mumble mentioning {{ notification.created_by.username }} was created
+        {{ notification.content }}
       </p>
 
     </span>

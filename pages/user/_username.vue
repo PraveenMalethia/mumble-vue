@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div v-if="!loading"
     class="
       bg-gray-100
       flex
@@ -45,7 +45,7 @@
               <p class="mt-2 0">Vote ratio</p>
             </div>
             <div class="flex-col ml-4">
-              <p class="text-2xl font-light px-2">{{user.followers.length}}</p>
+              <p class="text-2xl font-light px-2">{{user}}</p>
               <p class="mt-2">Followers</p>
             </div>
           </div>
@@ -77,27 +77,22 @@ export default {
     return {
       posts: [],
       loading: false,
-      user: null,
+      user: {},
     }
   },
-  async fetch() {
-    if (this.$route.params.username == this.$auth.user.username) {
-      this.user = this.$auth.user.profile
-      console.log(this.user)
-    } else {
-      this.loading = true
-      await this.$axios
-        .get(`/api/users/${this.$route.params.username}/mumbles/`)
-        .then((res) => {
-          this.posts = res.data
-        })
-      await this.$axios
-        .get(`/api/users/${this.$route.params.username}/`)
-        .then((res) => {
-          this.user = res.data.profile
-        })
-        this.loading = false
-    }
+  async mounted() {
+    this.loading = true
+    await this.$axios
+      .get(`/api/users/${this.$route.params.username}/mumbles/`)
+      .then((res) => {
+        this.posts = res.data
+      })
+    await this.$axios
+      .get(`/api/users/${this.$route.params.username}/`)
+      .then((res) => {
+        this.user = res.data.profile
+      })
+      this.loading = false
   },
 }
 </script>

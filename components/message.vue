@@ -4,7 +4,7 @@
     :class="{ 'flex-row-reverse pl-28 pr-0': 'true' == author }"
   >
     <img
-      src="https://us-east-1.linodeobjects.com/mumble/19f7ee39-77c4-ab0d-5bf1-031b417f3da3.png?AWSAccessKeyId=0GX0K8X1O9RE83ACTB4G&Signature=LxKFoqXgOoJXH8RqrOx4z2vKVD4%3D&Expires=1623588942"
+      src="https://us-east-1.linodeobjects.com/mumble/19f7ee39-77c4-ab0d-5bf1-031b417f3da3.png?AWSAccesshttps://us-east-1.linodeobjects.com/mumble/19f7ee39-77c4-ab0d-5bf1-031b417f3da3.png?AWSAccessKeyId=0GX0K8X1O9RE83ACTB4G&Signature=JJF28kf7PDgATMDFTYgR8h3vbhA%3D&Expires=1623675504KeyId=0GX0K8X1O9RE83ACTB4G&Signature=JJF28kf7PDgATMDFTYgR8h3vbhA%3D&Expires=1623675504"
       class="rounded-full h-10 mx-3"
     />
     <div
