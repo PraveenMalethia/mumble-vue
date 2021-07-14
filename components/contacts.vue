@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-gray-800 h-screen">
+  <div class="bg-white dark:bg-gray-800 h-screen rounded-xl">
     <div
       class="
         flex
@@ -28,6 +28,7 @@
           focus:border-2
           focus:outline-none
           focus:border-blue-300
+          text-sm
         "
       />
     </div>
@@ -52,7 +53,7 @@
           <client-only>
             <contact
               :contact="contact"
-              :currentName="currentName"
+              :currentUser="currentUser"
               v-on:changeCurrent="changeCurrent"
             />
           </client-only>
@@ -67,24 +68,22 @@ export default {
   async fetch() {
     this.error = false
     this.loading = true
-
     await this.$axios.get('/api/messages/').then((res) => {
       this.contacts = res.data
-      console.log(this.contacts)
     })
     this.loading = false
   },
   data() {
     return {
       contacts: [],
-      currentName: null,
+      currentUser: null,
     }
   },
   mounted() {
   },
   methods: {
     changeCurrent(username) {
-      this.currentName = username
+      this.currentUser = this.$store.state.chat[0].id
       this.$nuxt.refresh()
     },
   },

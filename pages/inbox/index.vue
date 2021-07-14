@@ -1,11 +1,7 @@
 <template>
-  <div class="bg-gray-100 grid grid-cols-9 m-auto dark:bg-gray-900 mb-20 w-screen md:w-full">
+  <div class="bg-gray-100 grid grid-cols-9 m-auto dark:bg-gray-900 mb-20 w-screen">
     <div class="col-span-2 md:col-span-3 mt-10 md:mt-20 rounded-l-md overflow-hidden">
-      <contacts />  
-    </div>
-
-    <div class="col-span-7 md:col-span-6 block mt-10 md:mt-20 md:ml-15">
-      <chats class="w-full" />
+      <contacts />
     </div>
   </div>
 </template>
