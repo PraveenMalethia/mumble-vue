@@ -46,15 +46,15 @@ export default {
         scheme: 'refresh',
         endpoints: {
           login: {
-            url: 'http://localhost:8000/api/users/login/',
+            url: 'https://mumbleapi.herokuapp.com/',
             method: 'POST',
           },
           logout: {
-            url: 'http://localhost:8000/api/users/logout/',
+            url: 'https://mumbleapi.herokuapp.com/',
             method: 'GET',
           },
           user: {
-            url: 'http://localhost:8000/api/users/profile/',
+            url: 'https://mumbleapi.herokuapp.com/',
             method: 'GET',
           },
         },
@@ -88,7 +88,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:8000',
+    baseURL: 'https://mumbleapi.herokuapp.com',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
