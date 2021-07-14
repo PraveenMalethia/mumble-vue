@@ -2,7 +2,7 @@
   <nuxt-link :to="'/inbox/'+contact.id"
     class="mr-2 ml-3 flex max-w-full py-2 cursor-pointer mb-2 hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300 ease-in-out rounded-lg">
     <div class="flex justify-center	md:justify-start max-w-full">
-      <img :src="'http://localhost:8000'+contact.last_message.sender.profile_pic" class="h-11 ml-5 md:ml-0 w-10 rounded-full">
+      <img :src="contact.last_message.sender.profile_pic" class="h-11 ml-5 md:ml-0 w-10 rounded-full">
       <div class="ml-1 truncate hidden md:pr-4 md:block">
         <div class="grid grid-cols-2 mb-1">
           <div class="w-full col-span-1">
