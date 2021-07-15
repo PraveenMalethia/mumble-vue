@@ -170,9 +170,9 @@
                   <span class="w-full truncate">
                     Unfollow
                     {{
-                      new_mumble.original_mumble
-                        ? new_mumble.original_mumble.user.username
-                        : new_mumble.user.username
+                      mumble.original_mumble
+                        ? mumble.original_mumble.user.username
+                        : mumble.user.username
                     }}
                   </span>
                 </span>
@@ -180,9 +180,9 @@
                   <fa icon="user-plus" class="mr-2"></fa>
                   Follow
                   {{
-                    new_mumble.original_mumble
-                      ? new_mumble.original_mumble.user.username
-                      : new_mumble.user.username
+                    mumble.original_mumble
+                      ? mumble.original_mumble.user.username
+                      : mumble.user.username
                   }}
                 </span>
               </div>
@@ -210,9 +210,9 @@
               >
                 <fa icon="ban" class="mr-2"></fa> Block
                 {{
-                  new_mumble.original_mumble
-                    ? new_mumble.original_mumble.user.username
-                    : new_mumble.user.username
+                  mumble.original_mumble
+                    ? mumble.original_mumble.user.username
+                    : mumble.user.username
                 }}
               </p>
             </div>
@@ -254,7 +254,7 @@
             dark:text-gray-200
           "
           :class="{
-            'text-green-400 dark:text-green-300': new_mumble.original_mumble
+            'text-green-400 dark:text-green-300': mumble.original_mumble
               ? mumble.original_mumble.up_voters.filter(
                   (user) => user.username == $auth.user.username
                 ).length
@@ -283,16 +283,16 @@
             justify-center
           "
         >
-          <span v-if="new_mumble.original_mumble">
-            <span v-if="new_mumble.original_mumble.vote_rank > 0"> + </span>
+          <span v-if="mumble.original_mumble">
+            <span v-if="mumble.original_mumble.vote_rank > 0"> + </span>
           </span>
           <span v-else>
-            <span v-if="new_mumble.vote_rank > 0"> + </span>
+            <span v-if="mumble.vote_rank > 0"> + </span>
           </span>
           {{
-            new_mumble.original_mumble
-              ? new_mumble.original_mumble.vote_rank
-              : new_mumble.vote_rank
+            mumble.original_mumble
+              ? mumble.original_mumble.vote_rank
+              : mumble.vote_rank
           }}
         </span>
         <button
@@ -310,12 +310,12 @@
       <div class="ml-6">
         <div
           class="text-gray-600 text-sm md:text-base dark:text-gray-200"
-          v-if="new_mumble.original_mumble == null"
+          v-if="mumble.original_mumble == null"
         >
-          {{ new_mumble.content }}
+          {{ mumble.content }}
         </div>
         <div class="text-gray-600 text-sm md:text-base dark:text-gray-200" v-else>
-          {{ new_mumble.original_mumble.content }}
+          {{ mumble.original_mumble.content }}
         </div>
       </div>
     </div>
@@ -342,9 +342,9 @@
           "
           icon="comments"
         /><span class="ml-2 dark:text-gray-100">{{
-          new_mumble.original_mumble
-            ? new_mumble.original_mumble.comment_count
-            : new_mumble.comment_count
+          mumble.original_mumble
+            ? mumble.original_mumble.comment_count
+            : mumble.comment_count
         }}</span>
       </div>
       <div class="justify-self-center md:justify-self-start">
@@ -383,9 +383,9 @@
           "
           icon="paper-plane"
         /><span class="ml-2 dark:text-gray-100">{{
-          new_mumble.original_mumble
-            ? new_mumble.original_mumble.share_count
-            : new_mumble.share_count
+          mumble.original_mumble
+            ? mumble.original_mumble.share_count
+            : mumble.share_count
         }}</span>
       </div>
     </div>
@@ -430,7 +430,7 @@ export default {
   },
   data: () => {
     return {
-      new_mumble:{},
+      mumble:{},
       loading: true,
       comment: '',
       show: false,
@@ -443,6 +443,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.mumble)
     if(this.mumble.original_mumble){
       for (var i = 0; i < this.mumble.original_mumble.user.followers.length; i++){
         if (this.$auth.user.id == this.mumble.original_mumble.user.followers[i]){
@@ -462,7 +463,7 @@ export default {
       this.$axios
         .post('/api/mumbles/vote/', { post_id: id, value: vote })
         .then((response) => {
-          this.new_mumble = response.data
+          this.mumble = response.data
         })
         .catch((error) => {
           console.log(error)
@@ -471,7 +472,7 @@ export default {
     Comment(){
       this.$axios.post('/api/mumbles/create/',{postId:this.mumble.id,isComment:true,content:this.comment})
       .then((response)=>{
-        this.new_mumble.comment_count +=1
+        this.mumble.comment_count +=1
       })
       .catch((error) => {
         console.log(error)
