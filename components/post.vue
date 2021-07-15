@@ -430,7 +430,6 @@ export default {
   },
   data: () => {
     return {
-      mumble:{},
       loading: true,
       comment: '',
       show: false,
@@ -443,7 +442,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.mumble)
     if(this.mumble.original_mumble){
       for (var i = 0; i < this.mumble.original_mumble.user.followers.length; i++){
         if (this.$auth.user.id == this.mumble.original_mumble.user.followers[i]){
