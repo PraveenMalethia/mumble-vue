@@ -39,7 +39,7 @@
           class="h-10 md:h-12 lg:h-14 rounded-full"
         /> -->
         <div class="ml-4 w-3/6">
-        <router-link :to="'/user/'+username">
+        <router-link :to="'/user/'+mumble.user.username">
           <p class="font-bold truncate text-sm md:text-lg dark:text-gray-200 cursor-pointer">
             {{
               mumble.original_mumble
@@ -438,28 +438,11 @@ export default {
       downvote: false,
       show_comments: false,
       positive: true,
-      username: '',
       options: false,
       follwing:false
     }
   },
   mounted() {
-    this.new_mumble = this.mumble
-    if (this.mumble.original_mumble != null) {
-      if (this.mumble.original_mumble.vote_rank > 0) {
-        this.positive = true
-        this.username = this.mumble.original_mumble.user.username
-      } else {
-        this.positive = false
-      }
-    } else {
-      if (this.mumble.vote_rank > 0) {
-        this.positive = true
-        this.username = this.mumble.user.username
-      } else {
-        this.positive = false
-      }
-    }
     if(this.mumble.original_mumble){
       for (var i = 0; i < this.mumble.original_mumble.user.followers.length; i++){
         if (this.$auth.user.id == this.mumble.original_mumble.user.followers[i]){

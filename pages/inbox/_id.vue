@@ -34,7 +34,6 @@
           <message v-for="msg in messages" :key="msg.id" :author="true" :message="msg"/>
           </div>
         </div>
-
         <div class="flex w-full space-x-2 p-2 items-center">
           <input
             class="p-2 bg-gray-100 dark:bg-gray-800 h-12 rounded-md w-4/6 md:w-5/6 border-2 border-gray-200 dark:text-gray-100 focus:border-2 focus:outline-none focus:border-blue-300"

@@ -42,21 +42,24 @@
           font-semibold
           tracking-wide
           hidden
+          dark:text-gray-300
           md:block
         "
       >
         Chats
       </p>
-
       <div class="overflow-y-auto h-screen bg-white dark:bg-gray-800">
-        <div v-for="contact in contacts" :key="contact.id">
-          <client-only>
-            <contact
-              :contact="contact"
-              :currentUser="currentUser"
-              v-on:changeCurrent="changeCurrent"
-            />
-          </client-only>
+        <div v-if="contacts.length > 0">
+          <div v-for="contact in contacts" :key="contact.id">
+            <client-only>
+              <contact :contact="contact" />
+            </client-only>
+          </div>
+        </div>
+        <div v-else class="flex items-center justify-center">
+          <span class="ml-3 dark:text-white text-gray-600 text-xl">
+            Opps , No messages . You need to start talking to someone
+          </span>
         </div>
       </div>
     </div>
@@ -79,14 +82,7 @@ export default {
       currentUser: null,
     }
   },
-  mounted() {
-  },
-  methods: {
-    changeCurrent(username) {
-      this.currentUser = this.$store.state.chat[0].id
-      this.$nuxt.refresh()
-    },
-  },
+  mounted() {},
 }
 </script>
 

@@ -10,7 +10,7 @@
         />
         <div>
           <p class="font-bold lg:text-xl dark:text-gray-200 cursor-pointer md:text-xl">{{ user.username }}</p>
-          <p class="font-light text-indigo-600 dark:text-indigo-400 cursor-pointer md:text-lg">@{{ user.username }}</p>
+          <nuxt-link :to="'/user/'+user.username" class="font-light text-indigo-600 dark:text-indigo-400 cursor-pointer md:text-lg">@{{ user.username }}</nuxt-link>
         </div>
       </div>
 
@@ -72,7 +72,6 @@ export default {
           })
       },
     }
-
 }
 </script>
 

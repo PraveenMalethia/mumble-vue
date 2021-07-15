@@ -45,12 +45,13 @@
               <p class="mt-2 0">Vote ratio</p>
             </div>
             <div class="flex-col ml-4">
-              <p class="text-2xl font-light px-2">{{user}}</p>
+              <p class="text-2xl font-light px-2">{{user.followers_count}}</p>
               <p class="mt-2">Followers</p>
             </div>
           </div>
           <center>
             <button class="btn-primary">Follow</button>
+            <button @click="SendMessage()" class="btn-primary">Send Message</button>
           </center>
         </div>
       </div>
@@ -80,7 +81,7 @@ export default {
       user: {},
     }
   },
-  async mounted() {
+  async fetch() {
     this.loading = true
     await this.$axios
       .get(`/api/users/${this.$route.params.username}/mumbles/`)
@@ -94,6 +95,14 @@ export default {
       })
       this.loading = false
   },
+  methods: {
+    SendMessage(){
+      this.$axios.post('/api/messages/create-thread/',{ recipient_id : this.user.id })
+      .then((res) => {
+        this.$router.push('/inbox/'+res.data.id)
+      })
+    }
+  }
 }
 </script>
 

@@ -34,11 +34,7 @@
             </span>
             </div>
             <img
-              :src="
-                this.$auth.user.profile.profile_pic
-                  ? this.$auth.user.profile.profile_pic
-                  : 'https://mumbleapi.herokuapp.com/static/images/default.png'
-              "
+              :src="this.$auth.user.profile.profile_pic"
               @click="showProfileItems()"
               class="h-10 mr-4 ml-4 md:mr-12 lg:mr-16 rounded-full cursor-pointer"
             />

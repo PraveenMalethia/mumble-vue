@@ -33,8 +33,8 @@
       <div class="flex mx-auto">
         <img class="align-center" src="/images/login/404.svg" />
       </div>
+    </div><br><br><br><br>
     <button class="btn-error" @click="$router.push('/')"> <fa icon="chevron-left" class="mr-2"/> Back to Home</button>
-    </div>
   </div>
 </template>
 
