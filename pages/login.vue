@@ -58,7 +58,12 @@
           </div>
           <div class="px-4 pb-2 pt-4">
             <button @click="login()" class="btn-primary block w-full">
-              sign in
+              <span v-if="loading">
+                <loading />
+              </span>
+              <span v-else>
+                Log in
+              </span>
             </button>
           </div>
           <div class="px-4 pb-2 pt-4">
@@ -119,6 +124,7 @@ export default {
   layout:'auth',
   data() {
     return {
+      loading: false,
       credentials: {
         username: '',
         password: '',
@@ -128,9 +134,11 @@ export default {
   auth: 'guest',
   methods: {
     async login() {
+      this.loading = true
       await this.$auth.loginWith('local', {
         data: this.credentials,
       })
+      this.loading = false
     },
   },
 }
