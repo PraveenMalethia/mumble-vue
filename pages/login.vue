@@ -12,6 +12,7 @@
     <div
       class="lg:w-1/2 w-full dark:bg-gray-900 flex items-center justify-center text-center md:px-16 px-0 z-0"
     >
+    <ModeSwitch/>
       <div
         class="absolute lg:hidden z-10 inset-0 bg-no-repeat bg-cover items-center"
       >
@@ -40,12 +41,12 @@
               id="username"
               v-model="credentials.username"
               placeholder="Username"
-              class="block w-full p-4 text-lg rounded-sm dark:bg-black border focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              class="input-field"
             />
           </div>
           <div class="pb-2 pt-4">
             <input
-              class="block w-full p-4 text-lg rounded-sm dark:bg-black border focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              class="input-field"
               type="password"
               v-model="credentials.password"
               name="password"
@@ -120,7 +121,9 @@
 </template>
 
 <script>
+import ModeSwitch from '~/components/ModeSwitch.vue'
 export default {
+  components: { ModeSwitch },
   layout:'auth',
   data() {
     return {
