@@ -1,18 +1,6 @@
 <template>
   <div
-    class="
-      bg-white
-      dark:bg-gray-800
-      w-full
-      md:w-11/12
-      rounded-md
-      border-2 border-gray-200
-      dark:border-transparent
-      mt-6
-      py-6
-      px-4
-    "
-  >
+    class=" bg-white dark:bg-gray-800 w-full md:w-11/12 rounded-md border-2 border-gray-200 dark:border-transparent mt-6 py-6 px-4">
     <p
       v-if="mumble.original_mumble"
       class="text-sm text-gray-600 dark:text-gray-300 mb-2 ml-3"
@@ -22,9 +10,13 @@
     </p>
     <div class="flex justify-between items-center">
       <div class="flex w-3/6">
-        <span v-if="mumble.original_mumble
-          ? mumble.original_mumble.user.profile_pic
-          : mumble.user.profile_pic">
+        <span
+          v-if="
+            mumble.original_mumble
+              ? mumble.original_mumble.user.profile_pic
+              : mumble.user.profile_pic
+          "
+        >
           <img
             :src="
               mumble.original_mumble
@@ -34,39 +26,80 @@
             class="h-10 md:h-12 lg:h-14 rounded-full"
           />
         </span>
-        <!-- <img
-         src="data:image/png;base64,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"
-          class="h-10 md:h-12 lg:h-14 rounded-full"
-        /> -->
         <div class="ml-4 w-3/6">
-        <div @click="()=>{
-          let username =  mumble.original_mumble ? mumble.original_mumble.user.username : mumble.user.username
-          $router.push('/user/'+username)
-        }">
-          <p class="font-bold truncate text-sm md:text-lg dark:text-gray-200 cursor-pointer">
-            {{
-              mumble.original_mumble
-                ? mumble.original_mumble.user.username
-                : mumble.user.username
-            }}
-          </p>
-          <p class="font-light truncate text-xs md:text-base dark:text-gray-200 cursor-pointer">
-            @{{
-              mumble.original_mumble
-                ? mumble.original_mumble.user.username
-                : mumble.user.username
-            }}
-          </p>
-        </div>
+          <div
+            @click="
+              () => {
+                let username = mumble.original_mumble
+                  ? mumble.original_mumble.user.username
+                  : mumble.user.username
+                $router.push('/user/' + username)
+              }
+            "
+          >
+            <p
+              class="
+                font-bold
+                truncate
+                text-sm
+                md:text-lg
+                dark:text-gray-200
+                cursor-pointer
+              "
+            >
+              {{
+                mumble.original_mumble
+                  ? mumble.original_mumble.user.username
+                  : mumble.user.username
+              }}
+            </p>
+            <p
+              class="
+                font-light
+                truncate
+                text-xs
+                md:text-base
+                dark:text-gray-200
+                cursor-pointer
+              "
+            >
+              @{{
+                mumble.original_mumble
+                  ? mumble.original_mumble.user.username
+                  : mumble.user.username
+              }}
+            </p>
+          </div>
         </div>
       </div>
       <div class="w-3/6">
-        <span class="flex w-full flex-nowrap items-center text-gray-600 dark:text-gray-200">
-          <span class="text-xs truncate tracking-tight md:tracking-normal md:text-lg">
-          {{ mumble.created | moment }}
+        <span
+          class="
+            flex
+            w-full
+            flex-nowrap
+            items-center
+            text-gray-600
+            dark:text-gray-200
+          "
+        >
+          <span
+            class="
+              text-xs
+              truncate
+              tracking-tight
+              md:tracking-normal
+              md:text-lg
+            "
+          >
+            {{ mumble.created | moment }}
           </span>
-          <button @click="options = !options" @focusout="options = false"
-            tabindex="0" class="focus:outline-none">
+          <button
+            @click="options = !options"
+            @focusout="options = false"
+            tabindex="0"
+            class="focus:outline-none"
+          >
             <fa class="cursor-pointer ml-2 md:ml-4 mr-2" icon="ellipsis-v" />
           </button>
         </span>
@@ -74,7 +107,7 @@
     </div>
     <section
       v-if="options"
-      class="h-screen w-screen absolute top-0 -left-6"
+      class="h-screen w-screen absolute top-0 -left-10"
     ></section>
     <div v-if="options" class="relative w-full h-full z-20">
       <div>
@@ -317,7 +350,10 @@
         >
           {{ mumble.content }}
         </div>
-        <div class="text-gray-600 text-sm md:text-base dark:text-gray-200" v-else>
+        <div
+          class="text-gray-600 text-sm md:text-base dark:text-gray-200"
+          v-else
+        >
           {{ mumble.original_mumble.content }}
         </div>
       </div>
@@ -441,19 +477,25 @@ export default {
       show_comments: false,
       positive: true,
       options: false,
-      follwing:false
+      follwing: false,
     }
   },
   mounted() {
-    if(this.mumble.original_mumble){
-      for (var i = 0; i < this.mumble.original_mumble.user.followers.length; i++){
-        if (this.$auth.user.id == this.mumble.original_mumble.user.followers[i]){
+    if (this.mumble.original_mumble) {
+      for (
+        var i = 0;
+        i < this.mumble.original_mumble.user.followers.length;
+        i++
+      ) {
+        if (
+          this.$auth.user.id == this.mumble.original_mumble.user.followers[i]
+        ) {
           this.follwing = true
         }
       }
-    } else{
-      for (var i = 0; i < this.mumble.user.followers.length; i++){
-        if (this.$auth.user.id == this.mumble.user.followers[i]){
+    } else {
+      for (var i = 0; i < this.mumble.user.followers.length; i++) {
+        if (this.$auth.user.id == this.mumble.user.followers[i]) {
           this.follwing = true
         }
       }
@@ -470,14 +512,19 @@ export default {
           console.log(error)
         })
     },
-    Comment(){
-      this.$axios.post('/api/mumbles/create/',{postId:this.mumble.id,isComment:true,content:this.comment})
-      .then((response)=>{
-        this.mumble.comment_count +=1
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    Comment() {
+      this.$axios
+        .post('/api/mumbles/create/', {
+          postId: this.mumble.id,
+          isComment: true,
+          content: this.comment,
+        })
+        .then((response) => {
+          this.mumble.comment_count += 1
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     },
     moment: function (date) {
       return moment(date)
@@ -486,7 +533,7 @@ export default {
       return moment(date).format('MMMM Do YYYY, h:mm:ss a')
     },
   },
-  computed:{},
+  computed: {},
 
   filters: {
     moment: function (date) {
