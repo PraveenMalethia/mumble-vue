@@ -1,46 +1,26 @@
 <template>
-  <div
-    class="
-      min-w-screen min-h-screen
-      dark:bg-gray-900
-      bg-blue-100
-      flex
-      items-center
-      p-5
-      lg:p-20
-      overflow-hidden
-      relative
-    "
-  >
-    <div
-      class="
-        flex
-        min-h-full min-w-full
-        rounded-3xl
-        dark:bg-gray-600
-        dark:text-gray-300
-        bg-white
-        shadow-xl
-        p-10
-        lg:p-20
-        text-gray-800
-        relative
-        md:flex
-        items-center
-        text-center
-      "
-    >
-      <div class="flex mx-auto">
-        <img class="align-center" src="/images/login/404.svg" />
+  <main class="bg-white dark:bg-gray-800 overflow-hidden h-screen relative">
+    <div class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32">
+      <div class="container mx-auto px-6 flex flex-col justify-between items-center relative">
+        <div
+          class="flex w-full items-center justify-center space-x-12 flex-col md:flex-row mb-16 md:mb-8"
+        >
+          <h1
+            class="font-thin text-center lg:text-6xl text-gray-800 dark:text-gray-200 sm:text-sm"
+          >GOT LOST ?</h1>
+        </div>
+        <div class="flex items-center justify-center w-full mx-auto mt-6 md:mt-0 relative">
+          <img class src="/images/login/404.svg" />
+        </div>
+        <button @click="$router.push('/login')" class="px-6 py-4 btn-danger mt-10"><fa icon="chevron-left" class="mt-1 mr-4"></fa> Back Home</button>
       </div>
-    </div><br><br><br><br>
-    <button class="btn-error" @click="$router.push('/')"> <fa icon="chevron-left" class="mr-2"/> Back to Home</button>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script>
 export default {
-  layout: 'auth',
+  layout: 'auth'
 }
 </script>
 
